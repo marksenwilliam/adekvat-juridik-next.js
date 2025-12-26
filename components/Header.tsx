@@ -22,6 +22,44 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const trigger = document.getElementById('dropdown-trigger');
+    const dropdown = document.getElementById('dropdown-menu');
+    const arrow = document.getElementById('dropdown-arrow');
+
+    const showDropdown = () => {
+      dropdown?.classList.remove('opacity-0', 'invisible', 'pointer-events-none');
+      dropdown?.classList.add('opacity-100', 'visible');
+      arrow?.classList.add('rotate-180');
+    };
+
+    const hideDropdown = () => {
+      dropdown?.classList.add('opacity-0', 'invisible', 'pointer-events-none');
+      dropdown?.classList.remove('opacity-100', 'visible');
+      arrow?.classList.remove('rotate-180');
+    };
+
+    const handleTriggerEnter = () => showDropdown();
+    const handleTriggerLeave = () => {
+      setTimeout(() => {
+        if (!dropdown?.matches(':hover')) {
+          hideDropdown();
+        }
+      }, 100);
+    };
+
+    trigger?.addEventListener('mouseenter', handleTriggerEnter);
+    trigger?.addEventListener('mouseleave', handleTriggerLeave);
+    dropdown?.addEventListener('mouseenter', showDropdown);
+    dropdown?.addEventListener('mouseleave', hideDropdown);
+
+    return () => {
+      trigger?.removeEventListener('mouseenter', handleTriggerEnter);
+      trigger?.removeEventListener('mouseleave', handleTriggerLeave);
+      dropdown?.removeEventListener('mouseenter', showDropdown);
+      dropdown?.removeEventListener('mouseleave', hideDropdown);
+    };
+  }, []);
 
   useEffect(() => {
     const mobileMenuTrigger = document.getElementById('mobile-menu-trigger');
@@ -29,6 +67,9 @@ export default function Header() {
     const mobileMenuPanel = document.getElementById('mobile-menu-panel');
     const mobileMenuClose = document.getElementById('mobile-menu-close');
     const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
+    const mobileSubmenuTrigger = document.getElementById('mobile-submenu-trigger');
+    const mobileSubmenu = document.getElementById('mobile-submenu');
+    const mobileSubmenuArrow = document.getElementById('mobile-submenu-arrow');
 
     const openMobileMenu = () => {
       mobileMenu?.classList.remove('opacity-0', 'invisible', 'pointer-events-none');
@@ -44,14 +85,27 @@ export default function Header() {
       document.body.style.overflow = '';
     };
 
+    const toggleSubmenu = () => {
+      const submenu = mobileSubmenu as HTMLElement;
+      if (submenu.style.maxHeight) {
+        submenu.style.maxHeight = '';
+        mobileSubmenuArrow?.classList.remove('rotate-180');
+      } else {
+        submenu.style.maxHeight = submenu.scrollHeight + 'px';
+        mobileSubmenuArrow?.classList.add('rotate-180');
+      }
+    };
+
     mobileMenuTrigger?.addEventListener('click', openMobileMenu);
     mobileMenuClose?.addEventListener('click', closeMobileMenu);
     mobileMenuBackdrop?.addEventListener('click', closeMobileMenu);
+    mobileSubmenuTrigger?.addEventListener('click', toggleSubmenu);
 
     return () => {
       mobileMenuTrigger?.removeEventListener('click', openMobileMenu);
       mobileMenuClose?.removeEventListener('click', closeMobileMenu);
       mobileMenuBackdrop?.removeEventListener('click', closeMobileMenu);
+      mobileSubmenuTrigger?.removeEventListener('click', toggleSubmenu);
     };
   }, []);
 
@@ -74,13 +128,20 @@ export default function Header() {
           </div>
 
           {/* Desktop Menu */}
-          <nav className="hidden lg:flex flex-1 space-x-8 items-center justify-center">
+          <nav className="hidden lg:flex flex-1 space-x-10 items-center justify-center">
             <Link href="/" className="text-[11px] hover:text-white transition-colors uppercase font-medium text-gray-100 tracking-widest">Hem</Link>
             <Link href="/om-oss" className="text-[11px] hover:text-white transition-colors uppercase font-medium text-gray-100 tracking-widest">Om Oss</Link>
-            <Link href="/juridisk-radgivning" className="text-[11px] hover:text-white transition-colors uppercase font-medium text-gray-100 tracking-widest">Juridisk Rådgivning</Link>
-            <Link href="/tvister" className="text-[11px] hover:text-white transition-colors uppercase font-medium text-gray-100 tracking-widest">Tvister</Link>
-            <Link href="/konsulttjanster" className="text-[11px] hover:text-white transition-colors uppercase font-medium text-gray-100 tracking-widest">Konsulttjänster</Link>
-            <Link href="/foretagsoverlatelser" className="text-[11px] hover:text-white transition-colors uppercase font-medium text-gray-100 tracking-widest">Företagsöverlåtelser</Link>
+
+            {/* Rättsområden Dropdown Trigger */}
+            <div className="relative" id="dropdown-trigger">
+              <button className="text-[11px] hover:text-white transition-colors uppercase flex items-center gap-1 font-medium text-gray-100 tracking-widest pt-4 pb-4">
+                Rättsområden
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300" id="dropdown-arrow">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
+              </button>
+            </div>
+
             <Link href="/prislista" className="text-[11px] hover:text-white transition-colors uppercase font-medium text-gray-100 tracking-widest">Prislista</Link>
             <Link href="/kontakt" className="text-[11px] hover:text-white transition-colors uppercase font-medium text-gray-100 tracking-widest">Kontakt</Link>
           </nav>
@@ -103,6 +164,16 @@ export default function Header() {
         </div>
       </header>
 
+      {/* Fixed Dropdown Menu (Desktop Only) */}
+      <div id="dropdown-menu" className="hidden lg:block opacity-0 invisible pointer-events-none fixed top-20 left-1/2 -translate-x-1/2 transition-all duration-300 z-[99999]">
+        <div className="bg-white/95 backdrop-blur-md border border-gray-100 shadow-xl rounded-sm py-2 min-w-[220px] pointer-events-auto">
+          <Link href="/juridisk-radgivning" className="block px-5 py-3 text-[11px] uppercase tracking-widest font-medium text-gray-600 hover:text-[#C4A470] hover:bg-gray-50 transition-colors">Juridisk Rådgivning</Link>
+          <Link href="/tvister" className="block px-5 py-3 text-[11px] uppercase tracking-widest font-medium text-gray-600 hover:text-[#C4A470] hover:bg-gray-50 transition-colors">Tvister</Link>
+          <Link href="/konsulttjanster" className="block px-5 py-3 text-[11px] uppercase tracking-widest font-medium text-gray-600 hover:text-[#C4A470] hover:bg-gray-50 transition-colors">Konsulttjänster</Link>
+          <Link href="/foretagsoverlatelser" className="block px-5 py-3 text-[11px] uppercase tracking-widest font-medium text-gray-600 hover:text-[#C4A470] hover:bg-gray-50 transition-colors">Företagsöverlåtelser</Link>
+        </div>
+      </div>
+
       {/* Mobile Menu (Tablet & Mobile Only) */}
       <div id="mobile-menu" className="lg:hidden fixed inset-0 z-[99999] pointer-events-none opacity-0 invisible transition-all duration-300">
         {/* Backdrop */}
@@ -124,10 +195,23 @@ export default function Header() {
           <nav className="flex flex-col px-6 space-y-1">
             <Link href="/" className="text-[11px] uppercase tracking-widest font-medium text-gray-300 hover:text-white transition-colors py-4 border-b border-white/5">Hem</Link>
             <Link href="/om-oss" className="text-[11px] uppercase tracking-widest font-medium text-gray-300 hover:text-white transition-colors py-4 border-b border-white/5">Om Oss</Link>
-            <Link href="/juridisk-radgivning" className="text-[11px] uppercase tracking-widest font-medium text-gray-300 hover:text-white transition-colors py-4 border-b border-white/5">Juridisk Rådgivning</Link>
-            <Link href="/tvister" className="text-[11px] uppercase tracking-widest font-medium text-gray-300 hover:text-white transition-colors py-4 border-b border-white/5">Tvister</Link>
-            <Link href="/konsulttjanster" className="text-[11px] uppercase tracking-widest font-medium text-gray-300 hover:text-white transition-colors py-4 border-b border-white/5">Konsulttjänster</Link>
-            <Link href="/foretagsoverlatelser" className="text-[11px] uppercase tracking-widest font-medium text-gray-300 hover:text-white transition-colors py-4 border-b border-white/5">Företagsöverlåtelser</Link>
+
+            {/* Rättsområden with Submenu */}
+            <div className="border-b border-white/5">
+              <div className="flex items-center justify-between py-4 cursor-pointer" id="mobile-submenu-trigger">
+                <span className="text-[11px] uppercase tracking-widest font-medium text-gray-300">Rättsområden</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-500 transition-transform duration-300" id="mobile-submenu-arrow">
+                  <path d="m6 9 6 6 6-6"></path>
+                </svg>
+              </div>
+              <div className="overflow-hidden max-h-0 transition-all duration-300" id="mobile-submenu">
+                <Link href="/juridisk-radgivning" className="block text-[11px] uppercase tracking-widest font-medium text-gray-500 hover:text-[#C4A470] transition-colors py-3 pl-4">Juridisk Rådgivning</Link>
+                <Link href="/tvister" className="block text-[11px] uppercase tracking-widest font-medium text-gray-500 hover:text-[#C4A470] transition-colors py-3 pl-4">Tvister</Link>
+                <Link href="/konsulttjanster" className="block text-[11px] uppercase tracking-widest font-medium text-gray-500 hover:text-[#C4A470] transition-colors py-3 pl-4">Konsulttjänster</Link>
+                <Link href="/foretagsoverlatelser" className="block text-[11px] uppercase tracking-widest font-medium text-gray-500 hover:text-[#C4A470] transition-colors py-3 pl-4 pb-4">Företagsöverlåtelser</Link>
+              </div>
+            </div>
+
             <Link href="/prislista" className="text-[11px] uppercase tracking-widest font-medium text-gray-300 hover:text-white transition-colors py-4 border-b border-white/5">Prislista</Link>
             <Link href="/kontakt" className="text-[11px] uppercase tracking-widest font-medium text-gray-300 hover:text-white transition-colors py-4 border-b border-white/5">Kontakt</Link>
           </nav>
