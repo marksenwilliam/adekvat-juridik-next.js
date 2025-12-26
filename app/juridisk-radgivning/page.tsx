@@ -1,8 +1,15 @@
 'use client';
 
 import Link from 'next/link';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export default function JuridiskRadgivningPage() {
+  const breadcrumbs = [
+    { label: 'Hem', href: '/' },
+    { label: 'Rättsområden', href: '/#rattsomraden' },
+    { label: 'Juridisk Rådgivning', href: '/juridisk-radgivning' },
+  ];
+
   return (
     <>
       {/* Fixed Hero Background */}
@@ -18,6 +25,11 @@ export default function JuridiskRadgivningPage() {
         {/* SECTION 1: Hero */}
         <section className="md:pl-6 md:pb-6 bg-[#0C122B] pt-32 pr-6 pb-32 pl-6" style={{ maskImage: 'linear-gradient(180deg, transparent, black 20%, black 100%, transparent)', WebkitMaskImage: 'linear-gradient(180deg, transparent, black 20%, black 100%, transparent)' }} id="hem">
           <section className="flex flex-col lg:flex-row max-w-5xl mt-20 mr-auto mb-20 ml-auto">
+
+            {/* Breadcrumbs */}
+            <div className="w-full mb-8">
+              <Breadcrumbs items={breadcrumbs} />
+            </div>
 
             {/* Left Content */}
             <div className="flex flex-col z-10 lg:w-7/12 lg:pr-0 lg:pl-5 lg:pt-5 lg:pb-5 border-[#c4a470] border-0 pt-12 pr-6 pb-12 pl-6 relative" style={{ maskImage: 'linear-gradient(0deg, transparent, black 0%, black 100%, transparent)', WebkitMaskImage: 'linear-gradient(0deg, transparent, black 0%, black 100%, transparent)' }}>

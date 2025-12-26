@@ -183,8 +183,8 @@ export default function Footer() {
         <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-400 uppercase tracking-wider font-medium">
           <p>© 2024 Adekvat Juridik. Alla rättigheter förbehållna.</p>
           <div className="flex gap-8 mt-4 md:mt-0">
-            <Link href="#" className="hover:text-black transition-colors">Integritetspolicy</Link>
-            <Link href="#" className="hover:text-black transition-colors">Cookies</Link>
+            <Link href="/integritetspolicy" className="hover:text-black transition-colors">Integritetspolicy</Link>
+            <Link href="/cookies" className="hover:text-black transition-colors">Cookies</Link>
           </div>
         </div>
       </div>

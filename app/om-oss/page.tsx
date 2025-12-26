@@ -41,7 +41,7 @@ export default function OmOssPage() {
                   <span>Om oss</span>
                 </div>
 
-                <h2 className="sm:text-5xl md:text-6xl text-4xl font-semibold text-gray-200 tracking-tight font-playfair bg-gray-200/0 mt-4">Adekvat Juridik</h2>
+                <h1 className="sm:text-5xl md:text-6xl text-4xl font-semibold text-gray-200 tracking-tight font-playfair bg-gray-200/0 mt-4">Adekvat Juridik</h1>
 
                 <p className="leading-relaxed md:text-lg text-base text-gray-50/70 max-w-2xl mt-5">Adekvat Juridik hjälper enskilda personer och företag att hantera juridiska problem, konflikter och avtal på ett effektivt och begripligt sätt. Med över 40 års erfarenhet och specialistkompetens inom flera rättsområden erbjuder vi:</p>
 

@@ -7,11 +7,19 @@ export default function Home() {
   return (
     <>
       {/* Fixed Hero Background */}
-      <div className="fixed top-0 w-full h-screen bg-cover bg-center -z-10" style={{
-        backgroundImage: "url('https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/abbe90fd-9c3a-4dae-acd5-6a3d77c640af_3840w.jpg')",
+      <div className="fixed top-0 w-full h-screen -z-10 overflow-hidden" style={{
         maskImage: "linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)",
         WebkitMaskImage: "linear-gradient(to bottom, transparent, black 0%, black 80%, transparent)"
-      }}></div>
+      }}>
+        <Image
+          src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/abbe90fd-9c3a-4dae-acd5-6a3d77c640af_3840w.jpg"
+          alt="Professionell affärsman i elegant mörk kostym och slips - symbol för juridisk expertis, trovärdighet och professionell rådgivning inom svensk advokat- och juristverksamhet"
+          fill
+          className="object-cover object-center"
+          priority
+          quality={90}
+        />
+      </div>
 
       {/* Fixed Hero Background Overlay */}
       <div className="fixed inset-0 z-0 pointer-events-none">

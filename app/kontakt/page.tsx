@@ -50,7 +50,7 @@ export default function KontaktPage() {
 
           {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="lg:text-5xl text-4xl text-gray-200 tracking-tight font-playfair mb-4">Kontakta oss</h2>
+            <h1 className="lg:text-5xl text-4xl text-gray-200 tracking-tight font-playfair mb-4">Kontakta oss</h1>
             <div className="w-12 h-px bg-[#C4A470] mx-auto mb-8"></div>
             <p className="leading-relaxed text-sm font-light text-gray-200 max-w-lg mr-auto ml-auto">Vi ser fram emot att höra från dig. Kontakta oss för en kostnadsfri konsultation.</p>
           </div>

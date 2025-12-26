@@ -133,7 +133,7 @@ export default function PrislistaPage() {
               <p className="text-xs font-medium uppercase tracking-[0.26em] text-neutral-400 mb-4">
                 Juridik · Skräddarsydd för dig
               </p>
-              <h2 className="sm:text-5xl text-4xl font-medium text-neutral-900 tracking-tight font-playfair">Prislista</h2>
+              <h1 className="sm:text-5xl text-4xl font-medium text-neutral-900 tracking-tight font-playfair">Prislista</h1>
               <p className="sm:text-base leading-relaxed text-sm font-light text-neutral-500 max-w-2xl mt-4">
                 Vi erbjuder ett antal juridiska tjänster till fasta priser för att du i förväg ska veta vad ditt ärende kostar. Observera att priserna är ungefärliga och kan justeras efter ärendets omfattning.
               </p>
