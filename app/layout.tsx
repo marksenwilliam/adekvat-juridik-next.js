@@ -19,7 +19,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://adekvatjuridik.se'),
+  metadataBase: new URL('https://www.adekvatjuridik.se'),
   title: {
     default: "Adekvat Juridik - Juridisk rådgivning i Sverige",
     template: "%s | Adekvat Juridik"
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Adekvat Juridik - Juridisk rådgivning i Sverige",
     description: "Erfaren juridisk rådgivning i Sverige. Över 40 års erfarenhet inom tvister, avtal, företagsöverlåtelser och konsulttjänster.",
-    url: 'https://adekvatjuridik.se',
+    url: 'https://www.adekvatjuridik.se',
     siteName: 'Adekvat Juridik',
     locale: 'sv_SE',
     type: 'website',
@@ -73,9 +73,9 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'LegalService',
     name: 'Adekvat Juridik',
-    image: 'https://adekvatjuridik.se/logo.png',
-    '@id': 'https://adekvatjuridik.se',
-    url: 'https://adekvatjuridik.se',
+    image: 'https://www.adekvatjuridik.se/logo.png',
+    '@id': 'https://www.adekvatjuridik.se',
+    url: 'https://www.adekvatjuridik.se',
     telephone: '+46-123-456-78',
     email: 'info@adekvatjuridik.se',
     address: {

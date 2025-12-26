@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/'],
     },
-    sitemap: 'https://adekvatjuridik.se/sitemap.xml',
+    sitemap: 'https://www.adekvatjuridik.se/sitemap.xml',
   };
 }

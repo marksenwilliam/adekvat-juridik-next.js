@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://adekvatjuridik.se';
+  const baseUrl = 'https://www.adekvatjuridik.se';
 
   return [
     {
