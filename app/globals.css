@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+:root {
+  --font-inter: 'Inter', sans-serif;
+  --font-playfair: 'Playfair Display', serif;
+}
+
+.font-serif {
+  font-family: var(--font-playfair), serif;
+}
+
+.font-playfair {
+  font-family: var(--font-playfair), serif !important;
+}
