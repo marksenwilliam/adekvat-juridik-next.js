@@ -12,29 +12,19 @@ export default function JuridiskRadgivningPage() {
 
   return (
     <>
-      {/* Fixed Hero Background */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        {/* Overlay Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/40"></div>
-        <div className="absolute inset-0 bg-black/20"></div>
-      </div>
-
       {/* Content Wrapper */}
-      <div className="flex flex-col z-10 relative">
+      <div className="flex flex-col relative">
 
         {/* SECTION 1: Hero */}
         <section className="md:pl-6 md:pb-6 bg-[#0C122B] pt-32 pr-6 pb-32 pl-6" style={{ maskImage: 'linear-gradient(180deg, transparent, black 20%, black 100%, transparent)', WebkitMaskImage: 'linear-gradient(180deg, transparent, black 20%, black 100%, transparent)' }} id="hem">
+          {/* Breadcrumbs JSON-LD only (no visible nav) */}
+          <Breadcrumbs items={breadcrumbs} renderNav={false} />
           <section className="flex flex-col lg:flex-row max-w-5xl mt-20 mr-auto mb-20 ml-auto">
-
-            {/* Breadcrumbs */}
-            <div className="w-full mb-8">
-              <Breadcrumbs items={breadcrumbs} />
-            </div>
 
             {/* Left Content */}
             <div className="flex flex-col z-10 lg:w-7/12 lg:pr-0 lg:pl-5 lg:pt-5 lg:pb-5 border-[#c4a470] border-0 pt-12 pr-6 pb-12 pl-6 relative" style={{ maskImage: 'linear-gradient(0deg, transparent, black 0%, black 100%, transparent)', WebkitMaskImage: 'linear-gradient(0deg, transparent, black 0%, black 100%, transparent)' }}>
 
-              <h1 className="lg:text-8xl leading-[1.05] text-6xl text-neutral-900 tracking-tighter mb-6">
+              <h1 className="lg:text-8xl leading-[1.2] text-6xl text-neutral-900 tracking-tighter mb-6">
                 <span className="block font-light text-gray-200 font-playfair pb-4">Juridisk <span className="lg:text-[5.6rem] text-[4.2rem]">rådgivning</span> –</span>
                 <span className="block text-6xl font-normal text-gray-200 tracking-normal font-playfair">Klarhet i komplexa frågor</span>
               </h1>
@@ -58,7 +48,7 @@ export default function JuridiskRadgivningPage() {
               </div>
             </div>
 
-            {/* Right Visual (Background Image with Books) */}
+            {/* Right Visual (Background Image) */}
             <div className="overflow-hidden bg-center lg:w-5/12 lg:flex-1 h-[400px] lg:h-auto bg-neutral-50/50 w-full bg-[url(https://images.unsplash.com/photo-1620662736427-b8a198f52a4d?w=1600&q=80)] bg-cover border-0 relative lg:pt-5 lg:mb-10"></div>
           </section>
         </section>
