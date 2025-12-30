@@ -119,6 +119,11 @@ export default function RootLayout({
   return (
     <html lang="sv" className="scroll-smooth" suppressHydrationWarning>
       <head>
+        {/* Preconnect to external resources for better performance */}
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="preconnect" href="https://hoirqrkdgbmvpwutwuwj.supabase.co" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://hoirqrkdgbmvpwutwuwj.supabase.co" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
