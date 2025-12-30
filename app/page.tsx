@@ -34,11 +34,6 @@ export default function Home() {
         <section className="min-h-screen flex lg:px-12 w-full pt-28 pr-6 pb-20 pl-6 items-center justify-center" id="hem">
           <div className="max-w-[1400px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-end">
             <div className="lg:col-span-7 flex flex-col">
-              <div className="mb-6 pl-1">
-                <span className="text-[10px] tracking-[0.25em] text-white/50 uppercase font-medium">
-                  Est. 1984
-                </span>
-              </div>
 
               <h1 className="leading-[0.95] md:text-8xl lg:text-[7rem] xl:text-[8rem] text-7xl italic text-white tracking-tight font-playfair pt-5 pb-5">
                 Trygg juridik, när det gäller.
