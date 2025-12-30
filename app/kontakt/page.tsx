@@ -165,14 +165,7 @@ export default function KontaktPage() {
             </div>
           </div>
 
-          {/* Bottom Bar */}
-          <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-400 uppercase tracking-wider font-medium">
-            <p>© 2024 Adekvat Juridik. Alla rättigheter förbehållna.</p>
-            <div className="flex gap-8 mt-4 md:mt-0">
-              <a href="#" className="hover:text-black transition-colors">Integritetspolicy</a>
-              <a href="#" className="hover:text-black transition-colors">Cookies</a>
-            </div>
-          </div>
+
         </div>
       </section>
     </>

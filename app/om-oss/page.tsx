@@ -16,7 +16,7 @@ export default function OmOssPage() {
             {/* Visual (Left) */}
             <div className="border-gradient before:rounded-none bg-gradient-to-br from-indigo-500/10 via-fuchsia-500/5 to-blue-300/10 rounded-none pt-2 pr-2 pb-2 pl-2 relative z-10">
               <div className="overflow-hidden rounded-none bg-black/30 ring-1 ring-white/10">
-                <img src="https://images.unsplash.com/photo-1462396240927-52058a6a84ec?w=1600&q=80" alt="AI-powered design workspace" className="md:h-[520px] w-full h-[320px] object-cover" />
+                <img src="/assets/Bild 5.jpg" alt="AI-powered design workspace" className="aspect-video w-full object-cover" />
               </div>
             </div>
 

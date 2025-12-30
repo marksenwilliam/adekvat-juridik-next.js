@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import AnimatedCTAButton from '@/components/AnimatedCTAButton';
 
 export default function JuridiskRadgivningPage() {
   const breadcrumbs = [
@@ -11,379 +12,200 @@ export default function JuridiskRadgivningPage() {
   ];
 
   return (
-    <>
-      {/* Content Wrapper */}
-      <div className="flex flex-col relative">
+    <div className="bg-[#050A18] min-h-screen text-gray-200 selection:bg-[#C4A470] selection:text-white overflow-x-hidden">
 
-        {/* SECTION 1: Hero */}
-        <section className="md:pl-6 md:pb-6 bg-[#0C122B] pt-32 pr-6 pb-32 pl-6" style={{ maskImage: 'linear-gradient(180deg, transparent, black 20%, black 100%, transparent)', WebkitMaskImage: 'linear-gradient(180deg, transparent, black 20%, black 100%, transparent)' }} id="hem">
-          {/* Breadcrumbs JSON-LD only (no visible nav) */}
-          <Breadcrumbs items={breadcrumbs} renderNav={false} />
-          <section className="flex flex-col lg:flex-row max-w-5xl mt-20 mr-auto mb-20 ml-auto">
+      {/* Navbar Placeholder/Breadcrumbs */}
+      <div className="pt-32 px-6 lg:px-12 max-w-[1400px] mx-auto">
+        <Breadcrumbs items={breadcrumbs} renderNav={true} />
+      </div>
 
-            {/* Left Content */}
-            <div className="flex flex-col z-10 lg:w-7/12 lg:pr-0 lg:pl-5 lg:pt-5 lg:pb-5 border-[#c4a470] border-0 pt-12 pr-6 pb-12 pl-6 relative" style={{ maskImage: 'linear-gradient(0deg, transparent, black 0%, black 100%, transparent)', WebkitMaskImage: 'linear-gradient(0deg, transparent, black 0%, black 100%, transparent)' }}>
+      {/* SECTION 1: Hero */}
+      <section className="relative w-full px-6 lg:px-12 py-12 lg:py-20">
+        <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-16 lg:gap-12 items-center">
 
-              <h1 className="lg:text-8xl leading-[1.2] text-6xl text-neutral-900 tracking-tighter mb-6">
-                <span className="block font-light text-gray-200 font-playfair pb-4">Juridisk <span className="lg:text-[5.6rem] text-[4.2rem]">rådgivning</span> –</span>
-                <span className="block text-6xl font-normal text-gray-200 tracking-normal font-playfair">Klarhet i komplexa frågor</span>
-              </h1>
+          {/* Left Content */}
+          <div className="flex flex-col z-10">
+            <h1 className="text-5xl sm:text-6xl lg:text-6xl font-medium font-playfair leading-[1.1] mb-8 text-white">
+              Juridisk <br />
+              <span>rådgivning</span> – <br />
+              <span className="font-light text-[#C4A470]">Klarhet i komplexa frågor</span>
+            </h1>
 
-              <p className="leading-relaxed text-3xl font-normal text-gray-200 tracking-tight font-playfair max-w-xl mr-20 mb-6">Skräddarsydda juridiska lösningar för privatpersoner och företag</p>
-              <p className="leading-relaxed text-base font-normal text-gray-200 max-w-xl mr-20 mb-6">Juridiska frågor dyker sällan upp vid bekväma tillfällen. Kanske står du inför ett viktigt avtal som behöver granskas innan du skriver under. Kanske har du fått ett brev från en myndighet eller motpart som du inte riktigt förstår innebörden av. Eller så funderar du helt enkelt på hur lagen påverkar en situation i ditt liv eller din verksamhet. Oavsett vad det gäller finns vi här för att ge dig de svar du behöver – på ett språk du faktiskt förstår.</p>
-              <p className="leading-relaxed text-base font-normal text-gray-200 max-w-xl mr-20 mb-6">På Adekvat Juridik erbjuder vi juridisk rådgivning till både privatpersoner och företag. Med över 40 års samlad erfarenhet har vi hjälpt tusentals klienter att navigera genom juridiska utmaningar.</p>
+            <p className="text-[#C4A470] font-serif text-lg lg:text-xl mb-8">
+              Skräddarsydda juridiska lösningar för privatpersoner och företag
+            </p>
 
-              <div className="mb-10">
-                <button className="group inline-flex overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_25px_rgba(196,164,112,0.2)] pt-[1px] pr-[1px] pb-[1px] pl-[1px] relative items-center justify-center">
-                  <span className="absolute inset-[-100%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,transparent_75%,#C4A470_100%)] opacity-0 transition-opacity duration-300 group-hover:opacity-100"></span>
-                  <span className="absolute inset-0 bg-neutral-800 transition-opacity duration-300 group-hover:opacity-0"></span>
-                  <span className="flex items-center justify-center gap-2 uppercase transition-colors duration-300 group-hover:text-white text-xs font-extrabold text-stone-800 tracking-widest bg-gradient-to-t from-[#785926] to-[#c4a470] w-full h-full pt-3 pr-8 pb-3 pl-8 relative shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]">
-                    <span className="z-10 relative">Boka kostnadsfri konsultation</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="relative z-10 transition-transform duration-300 group-hover:translate-x-0.5">
-                      <path d="M5 12h14"></path>
-                      <path d="m12 5 7 7-7 7"></path>
-                    </svg>
-                  </span>
-                </button>
-              </div>
-            </div>
-
-            {/* Right Visual (Background Image) */}
-            <div className="overflow-hidden bg-center lg:w-5/12 lg:flex-1 h-[400px] lg:h-auto bg-neutral-50/50 w-full bg-[url(https://images.unsplash.com/photo-1620662736427-b8a198f52a4d?w=1600&q=80)] bg-cover border-0 relative lg:pt-5 lg:mb-10"></div>
-          </section>
-        </section>
-
-        {/* SECTION 2: Features Card Layout */}
-        <section className="lg:py-32 bg-stone-50 pt-24 pr-6 pb-24 pl-6">
-          <div className="max-w-6xl mx-auto">
-            <div className="overflow-hidden sm:px-10 lg:px-14 lg:py-14 bg-[#0C122B] ring-gray-200 ring-1 mt-5 mb-10 pt-10 pr-6 pb-10 pl-6 relative left-0 shadow-xl backdrop-blur-none" style={{ boxShadow: '0 25px 50px -12px rgba(2, 2, 2, 0.8), 0 0 30px rgba(196, 164, 112, 0.1)' }}>
-              <div className="flex flex-col lg:flex-row gap-x-12 gap-y-12 lg:items-stretch">
-                <div className="lg:flex-[3]">
-                  <p className="text-[11px] uppercase sm:text-xs font-light text-[#c4a470] tracking-widest mt-0 mr-0 mb-3 ml-0 pt-0">Våra tjänster</p>
-                  <h2 className="sm:text-5xl text-3xl font-light text-gray-200 tracking-tight font-playfair bg-gray-200/0 mb-6">Rådgivning som täcker dina behov</h2>
-
-                  <div className="space-y-8">
-                    <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 flex bg-[#C4A470]/10 w-8 h-8 rounded-full items-center justify-center">
-                        <span className="text-[#C4A470] font-semibold text-sm">01</span>
-                      </div>
-                      <div>
-                        <p className="text-sm text-gray-300 font-light">Vår juridiska rådgivning spänner över ett brett spektrum av frågor och situationer. Vi anpassar alltid vår hjälp efter just din situation, oavsett om du är privatperson eller företagare. Ibland vet man inte riktigt vilken kategori ens fråga tillhör – och det behöver du inte heller veta. Berätta bara vad du funderar på, så guidar vi dig rätt.</p>
-                      </div>
-                    </div>
-                    <div className="flex gap-4 items-start">
-                      <div className="flex-shrink-0 flex bg-[#C4A470]/10 w-8 h-8 rounded-full items-center justify-center">
-                        <span className="text-sm font-semibold text-[#C4A470]">02</span>
-                      </div>
-                      <div>
-                        <p className="text-sm text-gray-300 font-light">För privatpersoner hjälper vi ofta med frågor som rör familjerätt, arvsrätt och testamenten, samboavtal och äktenskapsförord, fastighetsaffärer och bostadsköp, konsumenträttsliga frågor samt granskning av avtal innan du skriver under.</p>
-                      </div>
-                    </div>
-                    <h2 className="sm:text-5xl text-3xl font-light text-gray-200 tracking-tight font-playfair bg-gray-200/0 mb-6 mt-4">För företag och organisationer</h2>
-                    <div className="flex gap-4 items-start">
-                      <div className="flex-shrink-0 flex bg-[#C4A470]/10 w-8 h-8 rounded-full items-center justify-center">
-                        <span className="text-[#C4A470] font-semibold text-sm">01</span>
-                      </div>
-                      <div>
-                        <p className="text-sm text-gray-300 font-light">För företag och organisationer bistår vi med avtalsgranskning och avtalsförhandling, arbetsrättsliga frågor, bolagsrättsliga spörsmål, affärsjuridisk rådgivning samt genomgång av villkor och policyer.</p>
-                      </div>
-                    </div>
-                    <div className="flex gap-4 items-start">
-                      <div className="flex-shrink-0 flex bg-[#C4A470]/10 w-8 h-8 rounded-full items-center justify-center">
-                        <span className="text-sm font-semibold text-[#C4A470]">02</span>
-                      </div>
-                      <div>
-                        <p className="text-sm text-gray-300 font-light">Genom att ta hjälp av en erfaren jurist tidigt i processen kan du undvika kostsamma misstag, fatta välgrundade beslut baserade på fakta snarare än antaganden, känna dig trygg i att dina intressen är skyddade, samt spara både tid och pengar på lång sikt.</p>
-                      </div>
-                    </div>
-                    <div className="flex gap-4 items-start">
-                      <div className="flex-shrink-0 flex bg-[#C4A470]/10 w-8 h-8 rounded-full items-center justify-center">
-                        <span className="text-sm font-semibold text-[#C4A470]">03</span>
-                      </div>
-                      <div>
-                        <p className="text-sm text-gray-300 font-light">Det kan vara frestande att försöka lösa juridiska frågor på egen hand. Internet är fullt av information, och visst går det att hitta svar på grundläggande frågor. Men juridik handlar sällan om generella svar – det handlar om just din specifika situation, med alla dess nyanser och detaljer.</p>
-                      </div>
-                    </div>
-                    <div className="flex gap-4 items-start">
-                      <div className="flex-shrink-0 flex bg-[#C4A470]/10 w-8 h-8 rounded-full items-center justify-center">
-                        <span className="text-sm font-semibold text-[#C4A470]">04</span>
-                      </div>
-                      <div>
-                        <p className="text-sm text-gray-300 font-light">När du kontaktar Adekvat Juridik börjar vi alltid med att lyssna. Under ett inledande samtal går vi igenom din situation och identifierar vilka frågor som behöver besvaras. Detta första möte är kostnadsfritt och ger dig möjlighet att bedöma om vi är rätt match för ditt ärende.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="relative lg:flex-[2] lg:min-h-0">
-                  <div className="flex bg-[url(https://images.unsplash.com/photo-1734640672449-0d65faceb323?w=1600&q=80)] bg-cover border-[#c4a470] border ring-[#c4a470]/0 mt-0 mb-0 pt-0 pr-8 pb-0 pl-8 items-end justify-start h-[500px] lg:h-full"></div>
-                </div>
-              </div>
-            </div>
-            <div className="overflow-hidden sm:px-10 lg:px-14 lg:py-14 bg-[#0C122B] ring-gray-200 ring-1 mt-10 mb-10 pt-10 pr-6 pb-10 pl-6 relative left-0 shadow-xl" style={{ boxShadow: '0 25px 50px -12px rgba(2, 2, 2, 0.8), 0 0 30px rgba(196, 164, 112, 0.1)' }}>
-              <div className="flex flex-col lg:flex-row gap-12 text-[#c4a470] lg:items-stretch">
-                <div className="relative lg:flex-[2] lg:min-h-0 order-2 lg:order-1">
-                  <div className="flex bg-[url(https://images.unsplash.com/photo-1654588834754-33346e3ee095?w=1600&q=80)] bg-cover bg-center border-[#c4a470] border ring-0 pt-8 pr-8 pb-8 pl-8 items-start justify-end h-[400px] lg:h-full">
-                  </div>
-                </div>
-                <div className="lg:flex-[3] order-1 lg:order-2">
-                  <p className="text-[11px] sm:text-xs uppercase font-light text-[#c4a470] tracking-widest mb-3">Vår process</p>
-                  <h2 className="sm:text-5xl text-3xl font-light text-gray-200 tracking-tight font-playfair mb-6">Förebygg problem innan de uppstår</h2>
-
-                  <div className="space-y-6">
-                    <div className="flex gap-4 gap-x-4 gap-y-4 items-start">
-                      <div className="flex-shrink-0 flex bg-[#C4A470]/10 w-8 h-8 rounded-full items-center justify-center">
-                        <span className="text-[#C4A470] font-semibold text-sm">01</span>
-                      </div>
-                      <div className="">
-                        <p className="text-sm text-gray-200">Det kan vara frestande att försöka lösa juridiska frågor på egen hand. Internet är fullt av information, och visst går det att hitta svar på grundläggande frågor. Men juridik handlar sällan om generella svar – det handlar om just din specifika situation, med alla dess nyanser och detaljer.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="mt-8">
-                    <p className="text-[11px] uppercase sm:text-xs font-light text-[#c4a470] tracking-widest mb-3">Vårt arbetssätt</p>
-                    <h2 className="sm:text-5xl text-3xl font-light text-gray-200 tracking-tight font-playfair mb-6">Tydlighet från första kontakt</h2>
-
-                    <div className="space-y-6">
-                      <div className="flex gap-4 gap-x-4 gap-y-4 items-start">
-                        <div className="flex-shrink-0 flex bg-[#C4A470]/10 w-8 h-8 rounded-full items-center justify-center">
-                          <span className="text-[#C4A470] font-semibold text-sm">01</span>
-                        </div>
-                        <div className="">
-                          <p className="text-sm text-gray-200">Genom att ta hjälp av en erfaren jurist tidigt i processen kan du undvika kostsamma misstag, fatta välgrundade beslut baserade på fakta snarare än antaganden, känna dig trygg i att dina intressen är skyddade, samt spara både tid och pengar på lång sikt.</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* SECTION 4: Rättsområden */}
-        <section className="lg:py-32 bg-[#F9F8F6] pt-24 pb-24" id="rattsomraden">
-          <div className="max-w-[1200px] mr-auto ml-auto pr-6 pl-6">
-
-            {/* Section Header */}
-            <div className="text-center mb-16">
-              <h2 className="lg:text-5xl uppercase text-4xl text-[#1a1a1a] tracking-widest font-playfair mb-6">
-                Rättsområden
-              </h2>
-              <div className="w-12 h-px bg-[#C4A470] mx-auto mb-8"></div>
-              <p className="text-gray-500 font-light text-sm lg:text-base">
-                Vi erbjuder kvalificerad juridisk hjälp inom bland annat:
+            <div className="space-y-6 text-gray-400 font-light leading-relaxed max-w-xl">
+              <p>
+                Juridiska frågor dyker sällan upp vid bekväma tillfällen. Kanske står du inför ett viktigt avtal som behöver granskas innan du skriver under. Kanske har du fått ett brev från en myndighet eller motpart som du inte riktigt förstår innebörden av.
+              </p>
+              <p>
+                Oavsett vad det gäller finns vi här för att ge dig de svar du behöver – på ett språk du faktiskt förstår. Med över 40 års samlad erfarenhet har vi hjälpt tusentals klienter att navigera genom juridiska utmaningar.
               </p>
             </div>
 
-            {/* Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 gap-x-6 gap-y-6">
-
-              {/* Card 1 */}
-              <Link href="/juridisk-radgivning" className="flex flex-col group hover:-translate-y-1 transition-transform duration-300 bg-white h-full pt-10 pr-10 pb-10 pl-10 items-start">
-                <div className="w-12 h-12 border border-[#EBE5DA] flex items-center justify-center text-[#C4A470] mb-6 group-hover:border-[#C4A470] transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 stroke-[1.5]">
-                    <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"></path>
-                    <path d="M14 2v5a1 1 0 0 0 1 1h5"></path>
-                    <path d="M10 9H8"></path>
-                    <path d="M16 13H8"></path>
-                    <path d="M16 17H8"></path>
-                  </svg>
-                </div>
-                <h3 className="font-serif text-xl text-[#1a1a1a] mb-4">Juridisk rådgivning</h3>
-                <p className="text-xs text-gray-500 font-light leading-relaxed mb-6">Allmänna juridiska frågor, avtal, genomgång av handlingar.</p>
-                <div className="mt-auto">
-                  <span className="inline-flex items-center text-[10px] uppercase group-hover:text-[#1a1a1a] transition-colors font-medium text-[#C4A470] tracking-[0.15em]">
-                    Läs mer <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2 w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                  </span>
-                </div>
-              </Link>
-
-              {/* Card 2 */}
-              <Link href="/tvister" className="flex flex-col group hover:-translate-y-1 transition-transform duration-300 bg-white h-full pt-10 pr-10 pb-10 pl-10 items-start">
-                <div className="w-12 h-12 border border-[#EBE5DA] flex items-center justify-center text-[#C4A470] mb-6 group-hover:border-[#C4A470] transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 stroke-[1.5]">
-                    <path d="M12 3v18"></path>
-                    <path d="m19 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                    <path d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"></path>
-                    <path d="m5 8 3 8a5 5 0 0 1-6 0zV7"></path>
-                    <path d="M7 21h10"></path>
-                  </svg>
-                </div>
-                <h3 className="font-serif text-xl text-[#1a1a1a] mb-4">Tvister</h3>
-                <p className="text-xs text-gray-500 font-light leading-relaxed mb-6">Processer i och utanför domstol, medling och förhandling.</p>
-                <div className="mt-auto">
-                  <span className="inline-flex items-center text-[10px] uppercase group-hover:text-[#1a1a1a] transition-colors font-medium text-[#C4A470] tracking-[0.15em]">
-                    Läs mer <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2 w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                  </span>
-                </div>
-              </Link>
-
-              {/* Card 3 */}
-              <Link href="/konsulttjanster" className="flex flex-col group hover:-translate-y-1 transition-transform duration-300 bg-white h-full pt-10 pr-10 pb-10 pl-10 items-start">
-                <div className="w-12 h-12 border border-[#EBE5DA] flex items-center justify-center text-[#C4A470] mb-6 group-hover:border-[#C4A470] transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 stroke-[1.5]">
-                    <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                    <rect width="20" height="14" x="2" y="6" rx="2"></rect>
-                  </svg>
-                </div>
-                <h3 className="text-xl text-[#1a1a1a] font-serif mb-4">Konsulttjänst</h3>
-                <p className="text-xs text-gray-500 font-light leading-relaxed mb-6">Löpande stöd till företag och organisationer i vardagen.</p>
-                <div className="mt-auto">
-                  <span className="inline-flex items-center text-[10px] uppercase group-hover:text-[#1a1a1a] transition-colors cursor-pointer font-medium text-[#C4A470] tracking-[0.15em]">
-                    Läs mer <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2 w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                  </span>
-                </div>
-              </Link>
-
-              {/* Card 4 */}
-              <Link href="/foretagsoverlatelser" className="flex flex-col group hover:-translate-y-1 transition-transform duration-300 cursor-pointer bg-white h-full pt-10 pr-10 pb-10 pl-10 items-start">
-                <div className="flex group-hover:border-[#C4A470] transition-colors text-[#C4A470] w-12 h-12 border-[#EBE5DA] border mb-6 items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="stroke-[1.5] w-5 h-5">
-                    <path d="M10 12h4"></path>
-                    <path d="M10 8h4"></path>
-                    <path d="M14 21v-3a2 2 0 0 0-4 0v3"></path>
-                    <path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path>
-                    <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path>
-                  </svg>
-                </div>
-                <h3 className="font-serif text-xl text-[#1a1a1a] mb-4">Företagsöverlåtelser</h3>
-                <p className="leading-relaxed text-xs font-light text-gray-500 mb-6">Rådgivning, avtal och förhandling vid köp och försäljning.</p>
-                <div className="mt-auto">
-                  <span className="inline-flex items-center text-[10px] uppercase group-hover:text-[#1a1a1a] transition-colors font-medium text-[#C4A470] tracking-[0.15em]">
-                    Läs mer <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2 w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                  </span>
-                </div>
-              </Link>
-
+            <div className="mt-12">
+              <AnimatedCTAButton href="/kontakt">
+                Boka kostnadsfri konsultation
+              </AnimatedCTAButton>
             </div>
-
-            {/* Footer Text */}
-            <div className="mt-20 text-center">
-              <p className="text-sm italic text-gray-400 font-serif cursor-pointer">Kontakta oss gärna om du är osäker på om ditt ärende faller inom våra områden</p>
-            </div>
-
           </div>
-        </section>
 
-        {/* SECTION 5: Prislista */}
-        <section className="lg:py-32 text-white bg-[#0C122B] pt-24 pb-24" id="prislista">
-          <div className="max-w-[1200px] mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-24">
+          {/* Right Visual */}
+          <div className="relative">
+            <div className="relative z-10 aspect-video w-full max-w-none mx-auto lg:ml-auto">
+              <div className="absolute inset-0 bg-neutral-800 animate-pulse" />
+              <img
+                src="/assets/Bild 2.jpg"
+                alt="Legal Statue"
+                className="w-full h-full object-cover relative z-10 shadow-2xl"
+              />
+              <div className="absolute -bottom-8 -left-8 w-24 h-24 border-l border-b border-[#C4A470] z-20 hidden lg:block"></div>
+              <div className="absolute top-4 -right-4 w-full h-full border border-[#C4A470]/30 z-0 hidden lg:block"></div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              {/* Left Column */}
-              <div className="">
-                <h2 className="lg:text-5xl uppercase leading-tight text-4xl tracking-widest font-playfair mb-4">
-                  Rättshjälp
-                  <span className="italic font-normal text-[#C4A470] font-playfair"> &amp;</span> arvode
+
+      {/* SECTION 2: Process */}
+      <section className="relative w-full px-6 lg:px-12 py-20 lg:py-32 bg-[#0B1121]">
+        <div className="max-w-[1400px] mx-auto">
+          <p className="text-xs uppercase tracking-[0.2em] text-[#C4A470] mb-4 font-medium">Våra tjänster</p>
+
+          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
+
+            {/* Left Content */}
+            <div>
+              <h2 className="text-4xl lg:text-5xl font-playfair text-white mb-12">
+                Rådgivning som täcker dina behov
+              </h2>
+
+              <div className="space-y-12">
+                <div className="flex gap-6 group">
+                  <div className="flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-[#C4A470] text-xs font-serif font-bold group-hover:bg-[#C4A470] group-hover:text-[#050A18] transition-all duration-300">
+                      01
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-gray-400 font-light leading-relaxed">
+                      Vår juridiska rådgivning spänner över ett brett spektrum av frågor. Vi anpassar alltid vår hjälp efter just din situation, oavsett om du är privatperson eller företagare.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-6 group">
+                  <div className="flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-[#C4A470] text-xs font-serif font-bold group-hover:bg-[#C4A470] group-hover:text-[#050A18] transition-all duration-300">
+                      02
+                    </div>
+                  </div>
+                  <div>
+                    <p className="text-gray-400 font-light leading-relaxed">
+                      För privatpersoner hjälper vi ofta med frågor som rör familjerätt, arvsrätt, samboavtal, fastighetsaffärer och bostadsköp, samt granskning av avtal innan du skriver under.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-20">
+                <h2 className="text-4xl lg:text-5xl font-playfair text-white mb-12">
+                  För företag och organisationer
                 </h2>
-                <div className="w-12 h-px bg-[#C4A470] mb-12"></div>
 
-                {/* Offer Card */}
-                <div className="px-12 py-12 relative" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.10)', boxShadow: '0 20px 50px rgba(0,0,0,0.35)', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }}>
-                  <span className="absolute top-8 right-8 text-[10px] tracking-[0.2em] uppercase text-gray-500 font-medium">Erbjudande</span>
-
-                  <div className="w-12 h-12 border border-white/20 flex items-center justify-center text-[#C4A470] mb-8">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 stroke-[1.5]">
-                      <path d="M12 6v6l4 2"></path>
-                      <circle cx="12" cy="12" r="10"></circle>
-                    </svg>
-                  </div>
-
-                  <h3 className="text-3xl text-white tracking-tight font-playfair mb-2">1 timmes fri konsultation</h3>
-                  <p className="font-serif italic text-[#C4A470] text-lg mb-8">Värde 2 500 kr</p>
-
-                  <p className="text-sm text-gray-400 font-light leading-relaxed mb-10 max-w-sm">
-                    Vi erbjuder alltid ett kostnadsfritt första möte för att gå igenom din situation och bedöma hur vi bäst kan hjälpa dig.
-                  </p>
-
-                  <a href="/kontakt" className="inline-flex items-center text-[10px] font-bold tracking-[0.15em] uppercase text-white hover:text-[#C4A470] transition-colors group">
-                    Boka tid nu
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2 w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300">
-                      <path d="M5 12h14"></path>
-                      <path d="m12 5 7 7-7 7"></path>
-                    </svg>
-                  </a>
+                <div className="space-y-10">
+                  {[
+                    "För företag och organisationer bistår vi med avtalsgranskning och avtalsförhandling, arbetsrättsliga frågor, bolagsrättsliga spörsmål samt genomgång av villkor och policyer.",
+                    "Genom att ta hjälp av en erfaren jurist tidigt i processen kan du undvika kostsamma misstag och fatta välgrundade beslut baserade på fakta snarare än antaganden.",
+                    "Det kan vara frestande att försöka lösa juridiska frågor på egen hand. Men juridik handlar sällan om generella svar – det handlar om just din specifika situation.",
+                    "När du kontaktar Adekvat Juridik börjar vi alltid med att lyssna. Detta första möte är kostnadsfritt och ger dig möjlighet att bedöma om vi är rätt match för ditt ärende."
+                  ].map((text, idx) => (
+                    <div key={idx} className="flex gap-6 group">
+                      <div className="flex-shrink-0">
+                        <div className="w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-[#C4A470] text-xs font-serif font-bold group-hover:bg-[#C4A470] group-hover:text-[#050A18] transition-all duration-300">
+                          0{idx + 1}
+                        </div>
+                      </div>
+                      <div>
+                        <p className="text-gray-400 font-light leading-relaxed">{text}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
+            </div>
 
-              {/* Right Column */}
-              <div className="flex flex-col justify-center space-y-10 lg:pt-8">
-
-                {/* Item 1 */}
-                <div className="flex gap-8 group">
-                  <div className="flex-shrink-0 pt-1">
-                    <div className="w-11 h-11 border border-white/10 flex items-center justify-center text-white/50 italic font-serif text-lg group-hover:border-[#C4A470]/50 group-hover:text-[#C4A470] transition-colors duration-300">1</div>
-                  </div>
-                  <div className="flex flex-col">
-                    <h3 className="text-2xl text-white tracking-tight font-playfair mb-3">Timarvode &amp; fakturering</h3>
-                    <p className="text-sm text-gray-400 font-light leading-relaxed mb-4 max-w-lg">
-                      Vi debiterar per timme och fakturerar normalt när ärendet är avslutat. I vissa fall kan vi be om ett löpande förskott till vårt klientmedelskonto. Detta dras sedan av från det slutliga arvodet när uppdraget avslutas.
-                    </p>
-                    <Link href="/prislista" className="hover:text-white transition-colors underline-offset-4 hover:underline text-xs text-[#C4A470]">Se fullständig prislista</Link>
-                  </div>
-                </div>
-
-                <div className="w-full h-px bg-white/5"></div>
-
-                {/* Item 2 */}
-                <div className="flex gap-8 group">
-                  <div className="flex-shrink-0 pt-1">
-                    <div className="w-11 h-11 border border-white/10 flex items-center justify-center text-white/50 group-hover:border-[#C4A470]/50 group-hover:text-[#C4A470] transition-colors duration-300">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 stroke-[1.5]">
-                        <path d="M12.659 22H18a2 2 0 0 0 2-2V8a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 14 2H6a2 2 0 0 0-2 2v9.34"></path>
-                        <path d="M14 2v5a1 1 0 0 0 1 1h5"></path>
-                        <path d="M10.378 12.622a1 1 0 0 1 3 3.003L8.36 20.637a2 2 0 0 1-.854.506l-2.867.837a.5.5 0 0 1-.62-.62l.836-2.869a2 2 0 0 1 .506-.853z"></path>
-                      </svg>
-                    </div>
-                  </div>
-                  <div className="flex flex-col">
-                    <h3 className="text-2xl text-white tracking-tight font-playfair mb-3">Fasta priser</h3>
-                    <p className="text-sm text-gray-400 font-light leading-relaxed max-w-lg">
-                      Vid upprättande av exempelvis testamente, äktenskapsförord eller samboavtal tillämpar vi ofta fasta priser för att ge dig trygghet och överskådlighet. Kontakta oss för aktuella prisuppgifter.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="w-full h-px bg-white/5"></div>
-
-                {/* Item 3 */}
-                <div className="flex gap-8 group">
-                  <div className="flex-shrink-0 pt-1">
-                    <div className="w-11 h-11 border border-white/10 flex items-center justify-center text-white/50 group-hover:border-[#C4A470]/50 group-hover:text-[#C4A470] transition-colors duration-300">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 stroke-[1.5]">
-                        <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path>
-                        <path d="m9 12 2 2 4-4"></path>
-                      </svg>
-                    </div>
-                  </div>
-                  <div className="flex flex-col">
-                    <h3 className="text-2xl text-white tracking-tight font-playfair mb-3">Rättsskydd &amp; försäkring</h3>
-                    <p className="text-sm text-gray-400 font-light leading-relaxed max-w-lg">
-                      I många ärenden har du rätt till ersättning genom rättsskydd i din hemförsäkring eller företagsförsäkring. Vi hjälper dig att kontakta försäkringsbolaget och utreda om du kan använda rättsskyddet.
-                    </p>
-                  </div>
-                </div>
-
+            {/* Right Image */}
+            <div className="relative h-full min-h-[500px] lg:min-h-0">
+              <div className="sticky top-12 w-full h-full lg:h-[80vh] min-h-[600px] relative">
+                <div className="absolute inset-4 border border-[#C4A470]/30 z-20 pointer-events-none"></div>
+                <img
+                  src="/assets/statue.jpg"
+                  alt="Interior Library"
+                  className="w-full h-full object-cover [transform:scaleX(-1)] shadow-2xl brightness-[0.8]"
+                />
               </div>
-
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Call to Action Section - Unique to this page */}
-        <section className="bg-white py-24 lg:py-32 relative z-10">
-          <div className="max-w-4xl mx-auto px-6 text-center">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl text-black tracking-tight font-playfair mb-8">
-              Har du en juridisk fråga?
-            </h2>
-            <div className="w-16 h-px bg-[#C4A470] mx-auto mb-10"></div>
-            <p className="text-lg sm:text-xl lg:text-2xl text-gray-600 font-light leading-relaxed max-w-3xl mx-auto">
-              Du behöver inte ha alla svar innan du kontaktar oss. Börja med en kostnadsfri konsultation där vi tillsammans går igenom din situation och ser hur vi bäst kan hjälpa dig.
-            </p>
+      {/* SECTION 3: Process Steps */}
+      <section className="relative w-full px-6 lg:px-12 py-20 lg:py-32">
+        <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+
+          {/* Left Image */}
+          <div className="relative order-2 lg:order-1">
+            <div className="aspect-square w-full max-w-xl mx-auto relative">
+              <img
+                src="https://images.unsplash.com/photo-1654588834754-33346e3ee095?w=1600&q=80"
+                alt="Table and Books"
+                className="w-full h-full object-cover shadow-2xl relative z-10"
+              />
+              <div className="absolute -top-6 -left-6 w-32 h-32 border-t border-l border-[#C4A470]/50 z-20 hidden lg:block"></div>
+            </div>
           </div>
-        </section>
 
-      </div>
-    </>
+          {/* Right Content */}
+          <div className="order-1 lg:order-2">
+            <div className="mb-16">
+              <p className="text-xs uppercase tracking-[0.2em] text-[#C4A470] mb-4 font-medium">Vår Process</p>
+              <h2 className="text-4xl lg:text-5xl font-playfair text-white mb-8">
+                Förebygg problem innan de uppstår
+              </h2>
+              <div className="flex gap-6">
+                <div className="flex-shrink-0 mt-1">
+                  <div className="w-10 h-10 rounded-full bg-[#C4A470]/10 flex items-center justify-center text-[#C4A470] text-xs font-serif font-bold">
+                    01
+                  </div>
+                </div>
+                <p className="text-gray-400 font-light leading-relaxed max-w-lg">
+                  Det kan vara frestande att försöka lösa juridiska frågor på egen hand. Internet är fullt av information, men juridik handlar sällan om generella svar – det handlar om just din specifika situation.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <p className="text-xs uppercase tracking-[0.2em] text-[#C4A470] mb-4 font-medium">Vårt arbetssätt</p>
+              <h2 className="text-4xl lg:text-5xl font-playfair text-white mb-8">
+                Tydlighet från första kontakt
+              </h2>
+              <div className="flex gap-6">
+                <div className="flex-shrink-0 mt-1">
+                  <div className="w-10 h-10 rounded-full bg-[#C4A470]/10 flex items-center justify-center text-[#C4A470] text-xs font-serif font-bold">
+                    01
+                  </div>
+                </div>
+                <p className="text-gray-400 font-light leading-relaxed max-w-lg">
+                  Genom att ta hjälp av en erfaren jurist tidigt i processen kan du undvika kostsamma misstag, fatta välgrundade beslut baserade på fakta, och spara både tid och pengar på lång sikt.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
   );
 }

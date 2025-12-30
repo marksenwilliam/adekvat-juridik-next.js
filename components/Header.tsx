@@ -101,11 +101,16 @@ export default function Header() {
     mobileMenuBackdrop?.addEventListener('click', closeMobileMenu);
     mobileSubmenuTrigger?.addEventListener('click', toggleSubmenu);
 
+    // Auto-close on link click
+    const mobileLinks = mobileMenu?.querySelectorAll('a');
+    mobileLinks?.forEach(link => link.addEventListener('click', closeMobileMenu));
+
     return () => {
       mobileMenuTrigger?.removeEventListener('click', openMobileMenu);
       mobileMenuClose?.removeEventListener('click', closeMobileMenu);
       mobileMenuBackdrop?.removeEventListener('click', closeMobileMenu);
       mobileSubmenuTrigger?.removeEventListener('click', toggleSubmenu);
+      mobileLinks?.forEach(link => link.removeEventListener('click', closeMobileMenu));
     };
   }, []);
 
