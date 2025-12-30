@@ -106,7 +106,6 @@ export default function RootLayout({
       name: 'Sweden'
     },
     description: 'Erfaren juridisk rådgivning i Sverige. Över 40 års erfarenhet inom tvister, avtal, företagsöverlåtelser och konsulttjänster.',
-    foundingDate: '1984',
     knowsAbout: [
       'Juridisk Rådgivning',
       'Tvister',

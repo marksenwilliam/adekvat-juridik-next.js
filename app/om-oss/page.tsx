@@ -1,4 +1,13 @@
-'use client';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Om Adekvat Juridik - Vår Historia & Värderingar',
+  description: 'Lär känna Adekvat Juridik. Vi kombinerar gedigen erfarenhet med personligt engagemang för att leverera juridiska lösningar du kan lita på.',
+  openGraph: {
+    title: 'Om Adekvat Juridik | Vår Historia',
+    description: 'Lär känna Adekvat Juridik och våra värderingar.',
+  },
+};
 
 export default function OmOssPage() {
   return (

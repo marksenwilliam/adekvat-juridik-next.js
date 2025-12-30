@@ -1,9 +1,17 @@
-'use client';
-
+import { Metadata } from 'next';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedArticles from '@/components/RelatedArticles';
 import AnimatedCTAButton from '@/components/AnimatedCTAButton';
+
+export const metadata: Metadata = {
+  title: 'Företagsöverlåtelser - Köp & Sälj Företag',
+  description: 'Juridisk expertis vid företagsöverlåtelser, ägarskiften och förvärv. Vi guidar dig genom due diligence, avtalsförhandling och tillträde. Kostnadsfri konsultation.',
+  openGraph: {
+    title: 'Företagsöverlåtelser - Köp & Sälj Företag | Adekvat Juridik',
+    description: 'Juridisk expertis vid företagsöverlåtelser, ägarskiften och förvärv.',
+  },
+};
 
 export default function ForetagsoverlatelserPage() {
   const breadcrumbs = [

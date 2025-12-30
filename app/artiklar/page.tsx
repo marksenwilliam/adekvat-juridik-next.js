@@ -1,13 +1,25 @@
+import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { articles } from '@/data/articles';
 import Breadcrumbs from '@/components/Breadcrumbs';
+
+export const metadata: Metadata = {
+    title: 'Artiklar & Juridiska Insikter',
+    description: 'Läs våra artiklar om juridik, tvister, företagsöverlåtelser och affärsjuridik. Praktiska tips och insikter från erfarna jurister.',
+    openGraph: {
+        title: 'Artiklar & Juridiska Insikter | Adekvat Juridik',
+        description: 'Läs våra artiklar om juridik, tvister, företagsöverlåtelser och affärsjuridik.',
+    },
+};
 
 export default function ArtiklarPage() {
     const breadcrumbs = [
         { label: 'Hem', href: '/' },
         { label: 'Artiklar', href: '/artiklar' },
     ];
+
+    const sortedArticles = [...articles].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
     return (
         <div className="bg-[#050A18] min-h-screen text-gray-200 selection:bg-[#C4A470] selection:text-white overflow-x-hidden">
@@ -33,7 +45,7 @@ export default function ArtiklarPage() {
             {/* Articles Grid */}
             <section className="w-full px-6 lg:px-12 py-12 lg:pb-32">
                 <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {[...articles].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).map((article) => (
+                    {sortedArticles.map((article) => (
                         <Link key={article.id} href={`/artiklar/${article.slug}`} className="group block bg-[#0B1121] border border-white/5 hover:border-[#C4A470]/50 transition-all duration-300 overflow-hidden">
                             <div className="relative h-64 w-full overflow-hidden">
                                 {article.image && (

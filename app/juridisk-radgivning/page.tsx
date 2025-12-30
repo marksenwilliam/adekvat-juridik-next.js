@@ -1,8 +1,16 @@
-'use client';
-
+import { Metadata } from 'next';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import AnimatedCTAButton from '@/components/AnimatedCTAButton';
+
+export const metadata: Metadata = {
+  title: 'Juridisk Rådgivning - Experthjälp för Dig',
+  description: 'Skräddarsydda juridiska lösningar för privatpersoner och företag. Över 40 års erfarenhet. Få klarhet i komplexa juridiska frågor. Kostnadsfri konsultation.',
+  openGraph: {
+    title: 'Juridisk Rådgivning | Adekvat Juridik',
+    description: 'Skräddarsydda juridiska lösningar för privatpersoner och företag.',
+  },
+};
 
 export default function JuridiskRadgivningPage() {
   const breadcrumbs = [

@@ -1,9 +1,17 @@
-'use client';
-
+import { Metadata } from 'next';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedArticles from '@/components/RelatedArticles';
 import AnimatedCTAButton from '@/components/AnimatedCTAButton';
+
+export const metadata: Metadata = {
+  title: 'Tvistlösning & Juridisk Representation',
+  description: 'Erfaren juridisk representation vid tvister. Vi hjälper dig genom hela processen - från första kravbrev till slutlig dom. Kostnadsfri första konsultation.',
+  openGraph: {
+    title: 'Tvistlösning & Juridisk Representation | Adekvat Juridik',
+    description: 'Erfaren juridisk representation vid tvister. Vi hjälper dig genom hela processen.',
+  },
+};
 
 export default function TvisterPage() {
   const breadcrumbs = [
@@ -103,48 +111,35 @@ export default function TvisterPage() {
                   </div>
                   <div>
                     <p className="text-gray-400 font-light leading-relaxed">
-                      Civilrättsliga tvister omfattar ofta avtalstvister där parterna är oense om avtalets innebörd, fordringar och betalningskrav, samt skadeståndskrav och ersättningsanspråk.
+                      Kommersiella tvister: Tvister mellan företag är ofta komplexa. Det kan handla om avtalsbrott, försenade leveranser, kvalitetsproblem eller samarbeten som havererat.
                     </p>
                   </div>
                 </div>
-              </div>
 
-              <div className="mt-20">
-                <h2 className="text-4xl lg:text-5xl font-playfair text-white mb-12">
-                  Kommersiella tvister
-                </h2>
-
-                <div className="space-y-10">
-                  {[
-                    "Kommersiella tvister inkluderar affärskonflikter mellan företag, tvister med leverantörer eller kunder, samarbetsavtal som fallerat, samt konkurrensrättsliga frågor.",
-                    "Utredning och analys är alltid första steget. Vi går igenom alla relevanta fakta, dokument och omständigheter för att göra en realistisk bedömning av ditt ärende.",
-                    "Förhandling och dialog är ofta den mest effektiva vägen till en lösning. En förlikning kan spara både tid, pengar och energi jämfört med en domstolsprocess.",
-                    "Många privatpersoner har rätt till rättsskydd genom sin hemförsäkring. Vi hjälper dig att kontakta ditt försäkringsbolag och utreda om du kan använda rättsskyddet."
-                  ].map((text, idx) => (
-                    <div key={idx} className="flex gap-6 group">
-                      <div className="flex-shrink-0">
-                        <div className="w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-[#C4A470] text-xs font-serif font-bold group-hover:bg-[#C4A470] group-hover:text-[#050A18] transition-all duration-300">
-                          0{idx + 1}
-                        </div>
-                      </div>
-                      <div>
-                        <p className="text-gray-400 font-light leading-relaxed">{text}</p>
-                      </div>
+                <div className="flex gap-6 group">
+                  <div className="flex-shrink-0">
+                    <div className="w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-[#C4A470] text-xs font-serif font-bold group-hover:bg-[#C4A470] group-hover:text-[#050A18] transition-all duration-300">
+                      03
                     </div>
-                  ))}
+                  </div>
+                  <div>
+                    <p className="text-gray-400 font-light leading-relaxed">
+                      Fordringstvist: När någon är skyldig dig pengar och vägrar betala behövs ofta professionell hjälp. Vi säkerställer att du får betalt för det du har rätt till.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Right Image */}
-            <div className="relative h-full min-h-[500px] lg:min-h-0">
-              <div className="sticky top-12 w-full h-full lg:h-[80vh] min-h-[600px] relative">
-                <div className="absolute inset-4 border border-[#C4A470]/30 z-20 pointer-events-none"></div>
+            <div className="relative flex items-center justify-center">
+              <div className="w-full max-w-lg">
                 <img
-                  src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1600&q=80"
-                  alt="Meeting Room"
-                  className="w-full h-full object-cover shadow-2xl brightness-[0.8]"
+                  src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1600&q=80"
+                  alt="Conflict Resolution"
+                  className="w-full object-cover shadow-2xl aspect-[4/5]"
                 />
+                <div className="absolute -bottom-4 -right-4 w-32 h-32 border-b border-r border-[#C4A470]/50 z-20 hidden lg:block"></div>
               </div>
             </div>
           </div>

@@ -1,8 +1,16 @@
-'use client';
-
+import { Metadata } from 'next';
 import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import AnimatedCTAButton from '@/components/AnimatedCTAButton';
+
+export const metadata: Metadata = {
+  title: 'Konsulttjänster för Företag - Expertstöd',
+  description: 'Strategisk juridisk rådgivning för företag. Vi fungerar som din externa partner och bollplank. Flexibelt stöd till en bråkdel av kostnaden. Kostnadsfri konsultation.',
+  openGraph: {
+    title: 'Konsulttjänster för Företag | Adekvat Juridik',
+    description: 'Strategisk juridisk rådgivning för företag.',
+  },
+};
 
 export default function KonsulttjansterPage() {
   const breadcrumbs = [

@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
@@ -8,6 +9,35 @@ interface PageProps {
     params: Promise<{
         slug: string;
     }>;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+    const { slug } = await params;
+    const article = articles.find((a) => a.slug === slug);
+
+    if (!article) {
+        return {
+            title: 'Artikel ej hittad',
+        };
+    }
+
+    return {
+        title: article.title,
+        description: article.excerpt,
+        openGraph: {
+            title: `${article.title} | Adekvat Juridik`,
+            description: article.excerpt,
+            type: 'article',
+            publishedTime: article.date,
+            images: article.image ? [article.image] : [],
+        },
+    };
+}
+
+export async function generateStaticParams() {
+    return articles.map((article) => ({
+        slug: article.slug,
+    }));
 }
 
 export default async function ArticlePage({ params }: PageProps) {
