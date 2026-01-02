@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -119,6 +120,14 @@ export default function RootLayout({
   return (
     <html lang="sv" className="scroll-smooth" suppressHydrationWarning>
       <head>
+        {/* Cookiebot Cookie Consent */}
+        <Script
+          id="Cookiebot"
+          src="https://consent.cookiebot.com/uc.js"
+          data-cbid="1a3a63d8-20b9-447c-ba35-363f1e913bc0"
+          data-blockingmode="auto"
+          strategy="beforeInteractive"
+        />
         {/* Preconnect to external resources for better performance */}
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="preconnect" href="https://hoirqrkdgbmvpwutwuwj.supabase.co" />
