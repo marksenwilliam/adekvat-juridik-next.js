@@ -6,6 +6,9 @@ import AnimatedCTAButton from '@/components/AnimatedCTAButton';
 export const metadata: Metadata = {
   title: 'Juridisk Rådgivning - Experthjälp för Dig',
   description: 'Skräddarsydda juridiska lösningar för privatpersoner och företag. Över 40 års erfarenhet. Få klarhet i komplexa juridiska frågor. Kostnadsfri konsultation.',
+  alternates: {
+    canonical: 'https://www.adekvatjuridik.se/juridisk-radgivning',
+  },
   openGraph: {
     title: 'Juridisk Rådgivning | Adekvat Juridik',
     description: 'Skräddarsydda juridiska lösningar för privatpersoner och företag.',
@@ -19,12 +22,36 @@ export default function JuridiskRadgivningPage() {
     { label: 'Juridisk Rådgivning', href: '/juridisk-radgivning' },
   ];
 
-  return (
-    <div className="bg-[#050A18] min-h-screen text-gray-200 selection:bg-[#C4A470] selection:text-white overflow-x-hidden">
+  // Service Schema for SEO
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Juridisk Rådgivning',
+    description: 'Skräddarsydda juridiska lösningar för privatpersoner och företag. Över 40 års erfarenhet. Få klarhet i komplexa juridiska frågor.',
+    provider: {
+      '@type': 'LegalService',
+      name: 'Adekvat Juridik',
+      url: 'https://www.adekvatjuridik.se',
+    },
+    areaServed: {
+      '@type': 'Country',
+      name: 'Sweden',
+    },
+    serviceType: 'Juridisk Rådgivning',
+    url: 'https://www.adekvatjuridik.se/juridisk-radgivning',
+  };
 
-      {/* Navbar Placeholder/Breadcrumbs */}
-      <div className="pt-32 px-6 lg:px-12 max-w-[1400px] mx-auto">
-        <Breadcrumbs items={breadcrumbs} renderNav={true} />
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <div className="bg-[#050A18] min-h-screen text-gray-200 selection:bg-[#C4A470] selection:text-white overflow-x-hidden">
+
+        {/* Navbar Placeholder/Breadcrumbs */}
+        <div className="pt-32 px-6 lg:px-12 max-w-[1400px] mx-auto">
+          <Breadcrumbs items={breadcrumbs} renderNav={true} />
       </div>
 
       {/* SECTION 1: Hero */}
@@ -214,6 +241,7 @@ export default function JuridiskRadgivningPage() {
         </div>
       </section>
 
-    </div>
+      </div>
+    </>
   );
 }

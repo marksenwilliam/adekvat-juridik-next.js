@@ -116,6 +116,14 @@ export default function Header() {
 
   return (
     <>
+      {/* Skip to main content link for accessibility */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[99999] focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:rounded-sm focus:text-sm focus:font-medium"
+      >
+        Hoppa till huvudinnehåll
+      </a>
+
       {/* Navigation */}
       <header className="fixed transition-all duration-300 backdrop-blur-[2px] z-50 w-full border-white/5 border-b top-0" id="main-header">
         <div className="lg:px-12 flex h-24 max-w-[1400px] mr-auto ml-auto pr-6 pl-6 items-center justify-between">
@@ -139,9 +147,14 @@ export default function Header() {
 
             {/* Rättsområden Dropdown Trigger */}
             <div className="relative" id="dropdown-trigger">
-              <button className="text-[11px] hover:text-white transition-colors uppercase flex items-center gap-1 font-medium text-gray-100 tracking-widest pt-4 pb-4">
+              <button 
+                className="text-[11px] hover:text-white transition-colors uppercase flex items-center gap-1 font-medium text-gray-100 tracking-widest pt-4 pb-4"
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-controls="dropdown-menu"
+              >
                 Rättsområden
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300" id="dropdown-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300" id="dropdown-arrow" aria-hidden="true">
                   <path d="m6 9 6 6 6-6"></path>
                 </svg>
               </button>
@@ -159,8 +172,8 @@ export default function Header() {
           </div>
 
           {/* Mobile Menu Icon */}
-          <div className="lg:hidden text-white cursor-pointer ml-auto" id="mobile-menu-trigger">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 stroke-[1.5]">
+          <div className="lg:hidden text-white cursor-pointer ml-auto" id="mobile-menu-trigger" role="button" aria-label="Öppna meny" aria-expanded="false" aria-controls="mobile-menu" tabIndex={0}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 stroke-[1.5]" aria-hidden="true">
               <path d="M4 5h16"></path>
               <path d="M4 12h16"></path>
               <path d="M4 19h16"></path>
@@ -188,8 +201,8 @@ export default function Header() {
         <div className="absolute top-0 right-0 h-full w-[280px] bg-[#0a0a0a] border-l border-white/10 transform translate-x-full transition-transform duration-300" id="mobile-menu-panel">
           {/* Close Button */}
           <div className="flex justify-end p-6">
-            <div className="text-white cursor-pointer" id="mobile-menu-close">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 stroke-[1.5]">
+            <div className="text-white cursor-pointer" id="mobile-menu-close" role="button" aria-label="Stäng meny" tabIndex={0}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 stroke-[1.5]" aria-hidden="true">
                 <path d="M18 6 6 18"></path>
                 <path d="m6 6 12 12"></path>
               </svg>

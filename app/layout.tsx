@@ -128,6 +128,19 @@ export default function RootLayout({
           data-blockingmode="auto"
           strategy="beforeInteractive"
         />
+        {/* Google Analytics 4 */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-GLJ7KTJEWH"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-GLJ7KTJEWH');
+          `}
+        </Script>
         {/* Preconnect to external resources for better performance */}
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="preconnect" href="https://hoirqrkdgbmvpwutwuwj.supabase.co" />
@@ -140,7 +153,9 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} ${playfair.variable} bg-black text-white antialiased selection:bg-white selection:text-black overflow-x-hidden`} style={{ fontFamily: 'var(--font-inter), sans-serif' }} suppressHydrationWarning>
         <Header />
-        {children}
+        <main id="main-content">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

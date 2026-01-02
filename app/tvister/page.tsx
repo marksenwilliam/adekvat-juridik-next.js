@@ -7,6 +7,9 @@ import AnimatedCTAButton from '@/components/AnimatedCTAButton';
 export const metadata: Metadata = {
   title: 'Tvistlösning & Juridisk Representation',
   description: 'Erfaren juridisk representation vid tvister. Vi hjälper dig genom hela processen - från första kravbrev till slutlig dom. Kostnadsfri första konsultation.',
+  alternates: {
+    canonical: 'https://www.adekvatjuridik.se/tvister',
+  },
   openGraph: {
     title: 'Tvistlösning & Juridisk Representation | Adekvat Juridik',
     description: 'Erfaren juridisk representation vid tvister. Vi hjälper dig genom hela processen.',
@@ -63,11 +66,34 @@ export default function TvisterPage() {
     ]
   };
 
+  // Service Schema for SEO
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Tvistlösning & Juridisk Representation',
+    description: 'Erfaren juridisk representation vid tvister. Vi hjälper dig genom hela processen - från första kravbrev till slutlig dom.',
+    provider: {
+      '@type': 'LegalService',
+      name: 'Adekvat Juridik',
+      url: 'https://www.adekvatjuridik.se',
+    },
+    areaServed: {
+      '@type': 'Country',
+      name: 'Sweden',
+    },
+    serviceType: 'Tvistlösning',
+    url: 'https://www.adekvatjuridik.se/tvister',
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
       <script
         type="application/ld+json"

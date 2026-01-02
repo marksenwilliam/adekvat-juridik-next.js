@@ -7,6 +7,9 @@ import AnimatedCTAButton from '@/components/AnimatedCTAButton';
 export const metadata: Metadata = {
   title: 'Företagsöverlåtelser - Köp & Sälj Företag',
   description: 'Juridisk expertis vid företagsöverlåtelser, ägarskiften och förvärv. Vi guidar dig genom due diligence, avtalsförhandling och tillträde. Kostnadsfri konsultation.',
+  alternates: {
+    canonical: 'https://www.adekvatjuridik.se/foretagsoverlatelser',
+  },
   openGraph: {
     title: 'Företagsöverlåtelser - Köp & Sälj Företag | Adekvat Juridik',
     description: 'Juridisk expertis vid företagsöverlåtelser, ägarskiften och förvärv.',
@@ -63,11 +66,34 @@ export default function ForetagsoverlatelserPage() {
     ]
   };
 
+  // Service Schema for SEO
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Företagsöverlåtelser',
+    description: 'Juridisk expertis vid företagsöverlåtelser, ägarskiften och förvärv. Vi guidar dig genom due diligence, avtalsförhandling och tillträde.',
+    provider: {
+      '@type': 'LegalService',
+      name: 'Adekvat Juridik',
+      url: 'https://www.adekvatjuridik.se',
+    },
+    areaServed: {
+      '@type': 'Country',
+      name: 'Sweden',
+    },
+    serviceType: 'Företagsöverlåtelser',
+    url: 'https://www.adekvatjuridik.se/foretagsoverlatelser',
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
       <script
         type="application/ld+json"

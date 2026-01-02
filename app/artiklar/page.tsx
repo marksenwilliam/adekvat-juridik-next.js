@@ -7,6 +7,9 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 export const metadata: Metadata = {
     title: 'Artiklar & Juridiska Insikter',
     description: 'Läs våra artiklar om juridik, tvister, företagsöverlåtelser och affärsjuridik. Praktiska tips och insikter från erfarna jurister.',
+    alternates: {
+        canonical: 'https://www.adekvatjuridik.se/artiklar',
+    },
     openGraph: {
         title: 'Artiklar & Juridiska Insikter | Adekvat Juridik',
         description: 'Läs våra artiklar om juridik, tvister, företagsöverlåtelser och affärsjuridik.',

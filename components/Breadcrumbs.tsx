@@ -22,7 +22,7 @@ export default function Breadcrumbs({ items, renderNav = true, className }: Brea
       '@type': 'ListItem',
       position: index + 1,
       name: item.label,
-      item: `https://adekvatjuridik.se${item.href}`,
+      item: `https://www.adekvatjuridik.se${item.href}`,
     })),
   };
 

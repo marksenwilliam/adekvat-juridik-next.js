@@ -6,6 +6,9 @@ import AnimatedCTAButton from '@/components/AnimatedCTAButton';
 export const metadata: Metadata = {
   title: 'Konsulttjänster för Företag - Expertstöd',
   description: 'Strategisk juridisk rådgivning för företag. Vi fungerar som din externa partner och bollplank. Flexibelt stöd till en bråkdel av kostnaden. Kostnadsfri konsultation.',
+  alternates: {
+    canonical: 'https://www.adekvatjuridik.se/konsulttjanster',
+  },
   openGraph: {
     title: 'Konsulttjänster för Företag | Adekvat Juridik',
     description: 'Strategisk juridisk rådgivning för företag.',
@@ -19,17 +22,41 @@ export default function KonsulttjansterPage() {
     { label: 'Juridisk konsultation', href: '/konsulttjanster' },
   ];
 
+  // Service Schema for SEO
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Konsulttjänster för Företag',
+    description: 'Strategisk juridisk rådgivning för företag. Vi fungerar som din externa partner och bollplank. Flexibelt stöd till en bråkdel av kostnaden.',
+    provider: {
+      '@type': 'LegalService',
+      name: 'Adekvat Juridik',
+      url: 'https://www.adekvatjuridik.se',
+    },
+    areaServed: {
+      '@type': 'Country',
+      name: 'Sweden',
+    },
+    serviceType: 'Juridisk Konsultation',
+    url: 'https://www.adekvatjuridik.se/konsulttjanster',
+  };
+
   return (
-    <div className="bg-[#050A18] min-h-screen text-gray-200 selection:bg-[#C4A470] selection:text-white overflow-x-hidden">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <div className="bg-[#050A18] min-h-screen text-gray-200 selection:bg-[#C4A470] selection:text-white overflow-x-hidden">
 
-      {/* Navbar Placeholder/Breadcrumbs (for structure) */}
-      <div className="pt-32 px-6 lg:px-12 max-w-[1400px] mx-auto">
-        <Breadcrumbs items={breadcrumbs} renderNav={true} />
-      </div>
+        {/* Navbar Placeholder/Breadcrumbs (for structure) */}
+        <div className="pt-32 px-6 lg:px-12 max-w-[1400px] mx-auto">
+          <Breadcrumbs items={breadcrumbs} renderNav={true} />
+        </div>
 
-      {/* SECTION 1: Hero */}
-      <section className="relative w-full px-6 lg:px-12 py-12 lg:py-20">
-        <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-16 lg:gap-12 items-center">
+        {/* SECTION 1: Hero */}
+        <section className="relative w-full px-6 lg:px-12 py-12 lg:py-20">
+          <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-16 lg:gap-12 items-center">
 
           {/* Left Content */}
           <div className="flex flex-col z-10">
@@ -224,6 +251,7 @@ export default function KonsulttjansterPage() {
         </div>
       </section>
 
-    </div>
+      </div>
+    </>
   );
 }

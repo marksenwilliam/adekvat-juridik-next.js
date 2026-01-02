@@ -24,6 +24,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {
         title: article.title,
         description: article.excerpt,
+        alternates: {
+            canonical: `https://www.adekvatjuridik.se/artiklar/${article.slug}`,
+        },
         openGraph: {
             title: `${article.title} | Adekvat Juridik`,
             description: article.excerpt,
@@ -54,8 +57,38 @@ export default async function ArticlePage({ params }: PageProps) {
         { label: article.title, href: `/artiklar/${article.slug}` },
     ];
 
+    // BlogPosting Schema for SEO
+    const blogPostingSchema = {
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        headline: article.title,
+        description: article.excerpt,
+        image: article.image || 'https://www.adekvatjuridik.se/assets/Bild%201.jpg',
+        datePublished: article.date,
+        dateModified: article.date,
+        author: {
+            '@type': 'Organization',
+            name: 'Adekvat Juridik',
+            url: 'https://www.adekvatjuridik.se',
+        },
+        publisher: {
+            '@type': 'Organization',
+            name: 'Adekvat Juridik',
+            url: 'https://www.adekvatjuridik.se',
+        },
+        mainEntityOfPage: {
+            '@type': 'WebPage',
+            '@id': `https://www.adekvatjuridik.se/artiklar/${article.slug}`,
+        },
+    };
+
     return (
-        <div className="bg-[#050A18] min-h-screen text-gray-200 selection:bg-[#C4A470] selection:text-white overflow-x-hidden">
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }}
+            />
+            <div className="bg-[#050A18] min-h-screen text-gray-200 selection:bg-[#C4A470] selection:text-white overflow-x-hidden">
 
             {/* Navbar Placeholder/Breadcrumbs */}
             <div className="pt-32 px-6 lg:px-12 max-w-[1400px] mx-auto">
@@ -99,6 +132,7 @@ export default async function ArticlePage({ params }: PageProps) {
 
             </article>
 
-        </div>
+            </div>
+        </>
     );
 }

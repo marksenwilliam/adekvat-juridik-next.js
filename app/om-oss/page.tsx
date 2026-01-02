@@ -3,6 +3,9 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Om Adekvat Juridik - Vår Historia & Värderingar',
   description: 'Lär känna Adekvat Juridik. Vi kombinerar gedigen erfarenhet med personligt engagemang för att leverera juridiska lösningar du kan lita på.',
+  alternates: {
+    canonical: 'https://www.adekvatjuridik.se/om-oss',
+  },
   openGraph: {
     title: 'Om Adekvat Juridik | Vår Historia',
     description: 'Lär känna Adekvat Juridik och våra värderingar.',
@@ -10,8 +13,27 @@ export const metadata: Metadata = {
 };
 
 export default function OmOssPage() {
+  // AboutPage Schema for SEO
+  const aboutPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'Om Adekvat Juridik',
+    description: 'Lär känna Adekvat Juridik. Vi kombinerar gedigen erfarenhet med personligt engagemang för att leverera juridiska lösningar du kan lita på.',
+    url: 'https://www.adekvatjuridik.se/om-oss',
+    mainEntity: {
+      '@type': 'LegalService',
+      name: 'Adekvat Juridik',
+      url: 'https://www.adekvatjuridik.se',
+      description: 'Erfaren juridisk rådgivning i Sverige. Över 40 års erfarenhet inom tvister, avtal, företagsöverlåtelser och konsulttjänster.',
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageSchema) }}
+      />
       {/* SECTION 1: Hero */}
       <section className="md:pl-6 bg-[#0c122b] pt-32 pr-6 pb-32 pl-6 relative overflow-hidden">
         {/* Subtle purple/blue glow */}
