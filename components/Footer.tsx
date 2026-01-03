@@ -3,7 +3,8 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { useState, FormEvent } from 'react';
+import { useState, useEffect, FormEvent } from 'react';
+import TurnstileWidget from '@/components/TurnstileWidget';
 
 export default function Footer() {
   const pathname = usePathname();
@@ -18,11 +19,31 @@ export default function Footer() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  
+  // Turnstile bot protection states
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [canSubmitWithoutTurnstile, setCanSubmitWithoutTurnstile] = useState(false);
+  const [formLoadTime, setFormLoadTime] = useState<number>(0);
+
+  // Record when form loads (for bot detection)
+  useEffect(() => {
+    setFormLoadTime(Date.now());
+  }, []);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('idle');
+    setErrorMessage(null);
+
+    // Check if Turnstile token is present (unless timeout/error occurred)
+    if (!turnstileToken && !canSubmitWithoutTurnstile) {
+      setErrorMessage('Vänligen verifiera att du inte är en robot.');
+      setSubmitStatus('error');
+      setIsSubmitting(false);
+      return;
+    }
 
     try {
       const response = await fetch('/api/contact', {
@@ -30,19 +51,29 @@ export default function Footer() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          honeypot: (document.getElementById('footer-website') as HTMLInputElement)?.value || '',
+          formLoadTime: formLoadTime,
+          turnstileToken: turnstileToken || 'timeout-fallback',
+        }),
       });
+
+      const data = await response.json();
 
       if (response.ok) {
         setSubmitStatus('success');
         setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+        setTurnstileToken(null);
         setTimeout(() => setSubmitStatus('idle'), 5000);
       } else {
         setSubmitStatus('error');
+        setErrorMessage(data.error || 'Ett fel uppstod. Vänligen försök igen.');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
       setSubmitStatus('error');
+      setErrorMessage('Ett fel uppstod. Vänligen försök igen.');
     } finally {
       setIsSubmitting(false);
     }
@@ -72,6 +103,18 @@ export default function Footer() {
               <div className="flex flex-col">
                 {/* Form */}
                 <form className="space-y-4 mb-12" onSubmit={handleSubmit}>
+                  {/* Honeypot field - hidden from real users, bots will fill it */}
+                  <div className="absolute -left-[9999px] opacity-0" aria-hidden="true">
+                    <label htmlFor="footer-website">Website</label>
+                    <input
+                      type="text"
+                      id="footer-website"
+                      name="footer-website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
+                  </div>
+
                   <input
                     type="text"
                     placeholder="Namn *"
@@ -120,9 +163,18 @@ export default function Footer() {
 
                   {submitStatus === 'error' && (
                     <div className="bg-red-50 border border-red-200 text-red-800 px-4 py-3 rounded-sm text-sm">
-                      Ett fel uppstod. Vänligen försök igen.
+                      {errorMessage || 'Ett fel uppstod. Vänligen försök igen.'}
                     </div>
                   )}
+
+                  {/* Turnstile Bot Protection */}
+                  <TurnstileWidget
+                    onVerify={(token) => setTurnstileToken(token)}
+                    onExpire={() => setTurnstileToken(null)}
+                    onError={() => setCanSubmitWithoutTurnstile(true)}
+                    onTimeout={() => setCanSubmitWithoutTurnstile(true)}
+                    theme="light"
+                  />
 
                   <button
                     type="submit"
