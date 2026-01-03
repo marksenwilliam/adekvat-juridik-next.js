@@ -185,10 +185,10 @@ export default function Header() {
       {/* Fixed Dropdown Menu (Desktop Only) */}
       <div id="dropdown-menu" className="hidden lg:block opacity-0 invisible pointer-events-none fixed top-20 left-1/2 -translate-x-1/2 transition-all duration-300 z-[99999]">
         <div className="bg-white/95 backdrop-blur-md border border-gray-100 shadow-xl rounded-sm py-2 min-w-[220px] pointer-events-auto">
-          <Link href="/juridisk-radgivning" className="block px-5 py-3 text-[11px] uppercase tracking-widest font-medium text-gray-600 hover:text-[#C4A470] hover:bg-gray-50 transition-colors">Juridisk Rådgivning</Link>
-          <Link href="/tvister" className="block px-5 py-3 text-[11px] uppercase tracking-widest font-medium text-gray-600 hover:text-[#C4A470] hover:bg-gray-50 transition-colors">Tvister</Link>
-          <Link href="/konsulttjanster" className="block px-5 py-3 text-[11px] uppercase tracking-widest font-medium text-gray-600 hover:text-[#C4A470] hover:bg-gray-50 transition-colors">Konsulttjänster</Link>
-          <Link href="/foretagsoverlatelser" className="block px-5 py-3 text-[11px] uppercase tracking-widest font-medium text-gray-600 hover:text-[#C4A470] hover:bg-gray-50 transition-colors">Företagsöverlåtelser</Link>
+          <Link href="/rattsomraden/juridisk-radgivning" className="block px-5 py-3 text-[11px] uppercase tracking-widest font-medium text-gray-600 hover:text-[#C4A470] hover:bg-gray-50 transition-colors">Juridisk Rådgivning</Link>
+          <Link href="/rattsomraden/tvister" className="block px-5 py-3 text-[11px] uppercase tracking-widest font-medium text-gray-600 hover:text-[#C4A470] hover:bg-gray-50 transition-colors">Tvister</Link>
+          <Link href="/rattsomraden/konsulttjanster" className="block px-5 py-3 text-[11px] uppercase tracking-widest font-medium text-gray-600 hover:text-[#C4A470] hover:bg-gray-50 transition-colors">Konsulttjänster</Link>
+          <Link href="/rattsomraden/foretagsoverlatelser" className="block px-5 py-3 text-[11px] uppercase tracking-widest font-medium text-gray-600 hover:text-[#C4A470] hover:bg-gray-50 transition-colors">Företagsöverlåtelser</Link>
         </div>
       </div>
 
@@ -223,10 +223,10 @@ export default function Header() {
                 </svg>
               </div>
               <div className="overflow-hidden max-h-0 transition-all duration-300" id="mobile-submenu">
-                <Link href="/juridisk-radgivning" className="block text-[11px] uppercase tracking-widest font-medium text-gray-500 hover:text-[#C4A470] transition-colors py-3 pl-4">Juridisk Rådgivning</Link>
-                <Link href="/tvister" className="block text-[11px] uppercase tracking-widest font-medium text-gray-500 hover:text-[#C4A470] transition-colors py-3 pl-4">Tvister</Link>
-                <Link href="/konsulttjanster" className="block text-[11px] uppercase tracking-widest font-medium text-gray-500 hover:text-[#C4A470] transition-colors py-3 pl-4">Konsulttjänster</Link>
-                <Link href="/foretagsoverlatelser" className="block text-[11px] uppercase tracking-widest font-medium text-gray-500 hover:text-[#C4A470] transition-colors py-3 pl-4 pb-4">Företagsöverlåtelser</Link>
+                <Link href="/rattsomraden/juridisk-radgivning" className="block text-[11px] uppercase tracking-widest font-medium text-gray-500 hover:text-[#C4A470] transition-colors py-3 pl-4">Juridisk Rådgivning</Link>
+                <Link href="/rattsomraden/tvister" className="block text-[11px] uppercase tracking-widest font-medium text-gray-500 hover:text-[#C4A470] transition-colors py-3 pl-4">Tvister</Link>
+                <Link href="/rattsomraden/konsulttjanster" className="block text-[11px] uppercase tracking-widest font-medium text-gray-500 hover:text-[#C4A470] transition-colors py-3 pl-4">Konsulttjänster</Link>
+                <Link href="/rattsomraden/foretagsoverlatelser" className="block text-[11px] uppercase tracking-widest font-medium text-gray-500 hover:text-[#C4A470] transition-colors py-3 pl-4 pb-4">Företagsöverlåtelser</Link>
               </div>
             </div>
 

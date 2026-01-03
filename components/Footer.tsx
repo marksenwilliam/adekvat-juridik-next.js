@@ -274,10 +274,10 @@ export default function Footer() {
             <div>
               <h3 className="text-[#C4A470] text-xs uppercase tracking-[0.2em] font-bold mb-6">Våra Tjänster</h3>
               <ul className="space-y-3">
-                <li><Link href="/juridisk-radgivning" className="text-sm text-gray-300 hover:text-[#C4A470] transition-colors">Juridisk Rådgivning</Link></li>
-                <li><Link href="/tvister" className="text-sm text-gray-300 hover:text-[#C4A470] transition-colors">Tvister</Link></li>
-                <li><Link href="/foretagsoverlatelser" className="text-sm text-gray-300 hover:text-[#C4A470] transition-colors">Företagsöverlåtelser</Link></li>
-                <li><Link href="/konsulttjanster" className="text-sm text-gray-300 hover:text-[#C4A470] transition-colors">Konsulttjänster</Link></li>
+                <li><Link href="/rattsomraden/juridisk-radgivning" className="text-sm text-gray-300 hover:text-[#C4A470] transition-colors">Juridisk Rådgivning</Link></li>
+                <li><Link href="/rattsomraden/tvister" className="text-sm text-gray-300 hover:text-[#C4A470] transition-colors">Tvister</Link></li>
+                <li><Link href="/rattsomraden/foretagsoverlatelser" className="text-sm text-gray-300 hover:text-[#C4A470] transition-colors">Företagsöverlåtelser</Link></li>
+                <li><Link href="/rattsomraden/konsulttjanster" className="text-sm text-gray-300 hover:text-[#C4A470] transition-colors">Konsulttjänster</Link></li>
               </ul>
             </div>
 

@@ -187,7 +187,7 @@ export default function Home() {
             {/* Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 gap-x-6 gap-y-6">
               {/* Card 1 */}
-              <Link href="/juridisk-radgivning" className="flex flex-col group hover:-translate-y-1 transition-transform duration-300 bg-white h-full pt-10 pr-10 pb-10 pl-10 items-start">
+              <Link href="/rattsomraden/juridisk-radgivning" className="flex flex-col group hover:-translate-y-1 transition-transform duration-300 bg-white h-full pt-10 pr-10 pb-10 pl-10 items-start">
                 <div className="w-12 h-12 rounded-full border border-[#EBE5DA] flex items-center justify-center text-[#C4A470] mb-6 group-hover:border-[#C4A470] transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 stroke-[1.5]">
                     <path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"></path>
@@ -211,7 +211,7 @@ export default function Home() {
               </Link>
 
               {/* Card 2 */}
-              <Link href="/tvister" className="flex flex-col group hover:-translate-y-1 transition-transform duration-300 bg-white h-full pt-10 pr-10 pb-10 pl-10 items-start">
+              <Link href="/rattsomraden/tvister" className="flex flex-col group hover:-translate-y-1 transition-transform duration-300 bg-white h-full pt-10 pr-10 pb-10 pl-10 items-start">
                 <div className="w-12 h-12 rounded-full border border-[#EBE5DA] flex items-center justify-center text-[#C4A470] mb-6 group-hover:border-[#C4A470] transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 stroke-[1.5]">
                     <path d="M12 3v18"></path>
@@ -235,7 +235,7 @@ export default function Home() {
               </Link>
 
               {/* Card 3 */}
-              <Link href="/konsulttjanster" className="flex flex-col group hover:-translate-y-1 transition-transform duration-300 bg-white h-full pt-10 pr-10 pb-10 pl-10 items-start">
+              <Link href="/rattsomraden/konsulttjanster" className="flex flex-col group hover:-translate-y-1 transition-transform duration-300 bg-white h-full pt-10 pr-10 pb-10 pl-10 items-start">
                 <div className="w-12 h-12 rounded-full border border-[#EBE5DA] flex items-center justify-center text-[#C4A470] mb-6 group-hover:border-[#C4A470] transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 stroke-[1.5]">
                     <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
@@ -256,7 +256,7 @@ export default function Home() {
               </Link>
 
               {/* Card 4 */}
-              <Link href="/foretagsoverlatelser" className="flex flex-col group hover:-translate-y-1 transition-transform duration-300 cursor-pointer bg-white h-full pt-10 pr-10 pb-10 pl-10 items-start">
+              <Link href="/rattsomraden/foretagsoverlatelser" className="flex flex-col group hover:-translate-y-1 transition-transform duration-300 cursor-pointer bg-white h-full pt-10 pr-10 pb-10 pl-10 items-start">
                 <div className="flex group-hover:border-[#C4A470] transition-colors text-[#C4A470] w-12 h-12 border-[#EBE5DA] border rounded-full mb-6 items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="stroke-[1.5] w-5 h-5">
                     <path d="M10 12h4"></path>

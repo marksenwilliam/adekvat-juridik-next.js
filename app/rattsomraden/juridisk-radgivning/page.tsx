@@ -4,30 +4,30 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import AnimatedCTAButton from '@/components/AnimatedCTAButton';
 
 export const metadata: Metadata = {
-  title: 'Konsulttjänster för Företag - Expertstöd',
-  description: 'Strategisk juridisk rådgivning för företag. Vi fungerar som din externa partner och bollplank. Flexibelt stöd till en bråkdel av kostnaden. Kostnadsfri konsultation.',
+  title: 'Juridisk Rådgivning - Experthjälp för Dig',
+  description: 'Skräddarsydda juridiska lösningar för privatpersoner och företag. Över 40 års erfarenhet. Få klarhet i komplexa juridiska frågor. Kostnadsfri konsultation.',
   alternates: {
-    canonical: 'https://www.adekvatjuridik.se/konsulttjanster',
+    canonical: 'https://www.adekvatjuridik.se/rattsomraden/juridisk-radgivning',
   },
   openGraph: {
-    title: 'Konsulttjänster för Företag | Adekvat Juridik',
-    description: 'Strategisk juridisk rådgivning för företag.',
+    title: 'Juridisk Rådgivning | Adekvat Juridik',
+    description: 'Skräddarsydda juridiska lösningar för privatpersoner och företag.',
   },
 };
 
-export default function KonsulttjansterPage() {
+export default function JuridiskRadgivningPage() {
   const breadcrumbs = [
     { label: 'Hem', href: '/' },
-    { label: 'Rättsområden', href: '/#rattsomraden' },
-    { label: 'Juridisk konsultation', href: '/konsulttjanster' },
+    { label: 'Rättsområden', href: '/rattsomraden' },
+    { label: 'Juridisk Rådgivning', href: '/rattsomraden/juridisk-radgivning' },
   ];
 
   // Service Schema for SEO
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'Konsulttjänster för Företag',
-    description: 'Strategisk juridisk rådgivning för företag. Vi fungerar som din externa partner och bollplank. Flexibelt stöd till en bråkdel av kostnaden.',
+    name: 'Juridisk Rådgivning',
+    description: 'Skräddarsydda juridiska lösningar för privatpersoner och företag. Över 40 års erfarenhet. Få klarhet i komplexa juridiska frågor.',
     provider: {
       '@type': 'LegalService',
       name: 'Adekvat Juridik',
@@ -37,8 +37,8 @@ export default function KonsulttjansterPage() {
       '@type': 'Country',
       name: 'Sweden',
     },
-    serviceType: 'Juridisk Konsultation',
-    url: 'https://www.adekvatjuridik.se/konsulttjanster',
+    serviceType: 'Juridisk Rådgivning',
+    url: 'https://www.adekvatjuridik.se/rattsomraden/juridisk-radgivning',
   };
 
   return (
@@ -49,33 +49,33 @@ export default function KonsulttjansterPage() {
       />
       <div className="bg-[#050A18] min-h-screen text-gray-200 selection:bg-[#C4A470] selection:text-white overflow-x-hidden">
 
-        {/* Navbar Placeholder/Breadcrumbs (for structure) */}
+        {/* Navbar Placeholder/Breadcrumbs */}
         <div className="pt-32 px-6 lg:px-12 max-w-[1400px] mx-auto">
           <Breadcrumbs items={breadcrumbs} renderNav={true} />
-        </div>
+      </div>
 
-        {/* SECTION 1: Hero */}
-        <section className="relative w-full px-6 lg:px-12 py-12 lg:py-20">
-          <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-16 lg:gap-12 items-center">
+      {/* SECTION 1: Hero */}
+      <section className="relative w-full px-6 lg:px-12 py-12 lg:py-20">
+        <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-16 lg:gap-12 items-center">
 
           {/* Left Content */}
           <div className="flex flex-col z-10">
             <h1 className="text-5xl sm:text-6xl lg:text-6xl font-medium font-playfair leading-[1.1] mb-8 text-white">
-              Konsulttjänster – <br />
-              <span>Expertstöd</span> <br />
-              <span className="font-light text-[#C4A470]">för din verksamhet</span>
+              Juridisk <br />
+              <span>rådgivning</span> – <br />
+              <span className="font-light text-[#C4A470]">Klarhet i komplexa frågor</span>
             </h1>
 
             <p className="text-[#C4A470] font-serif text-lg lg:text-xl mb-8">
-              Strategisk rådgivning som ger dig trygghet att växa
+              Skräddarsydda juridiska lösningar för privatpersoner och företag
             </p>
 
             <div className="space-y-6 text-gray-400 font-light leading-relaxed max-w-xl">
               <p>
-                Att driva företag innebär ständiga beslut. Vissa är enkla, andra kan vara avgörande för verksamhetens framtid. Det är i de avgörande ögonblicken som rätt kompetens gör skillnad.
+                Juridiska frågor dyker sällan upp vid bekväma tillfällen. Kanske står du inför ett viktigt avtal som behöver granskas innan du skriver under. Kanske har du fått ett brev från en myndighet eller motpart som du inte riktigt förstår innebörden av.
               </p>
               <p>
-                Våra konsulttjänster är utformade för att ge dig exakt det stöd du behöver, när du behöver det. Vi fungerar som din externa partner, bollplank och specialistfunktion – till en bråkdel av kostnaden för att anställa.
+                Oavsett vad det gäller finns vi här för att ge dig de svar du behöver – på ett språk du faktiskt förstår. Med över 40 års samlad erfarenhet har vi hjälpt tusentals klienter att navigera genom juridiska utmaningar.
               </p>
             </div>
 
@@ -88,42 +88,35 @@ export default function KonsulttjansterPage() {
 
           {/* Right Visual */}
           <div className="relative">
-            {/* Main Image */}
             <div className="relative z-10 aspect-video w-full max-w-none mx-auto lg:ml-auto">
-              <div className="absolute inset-0 bg-neutral-800 animate-pulse" /> {/* Placeholder while loading */}
+              <div className="absolute inset-0 bg-neutral-800 animate-pulse" />
               <img
-                src="/assets/Bild 4.jpg"
-                alt="Statue and Books"
+                src="/assets/Bild 2.jpg"
+                alt="Legal Statue"
                 className="w-full h-full object-cover relative z-10 shadow-2xl"
               />
-
-              {/* Golden L-Shape Decoration Bottom-Left */}
               <div className="absolute -bottom-8 -left-8 w-24 h-24 border-l border-b border-[#C4A470] z-20 hidden lg:block"></div>
-
-              {/* Golden Frame Outline (Optional/Thin) */}
               <div className="absolute top-4 -right-4 w-full h-full border border-[#C4A470]/30 z-0 hidden lg:block"></div>
             </div>
           </div>
-
         </div>
       </section>
 
 
-      {/* SECTION 2: Process / Mer än reaktiv hjälp */}
+      {/* SECTION 2: Process */}
       <section className="relative w-full px-6 lg:px-12 py-20 lg:py-32 bg-[#0B1121]">
         <div className="max-w-[1400px] mx-auto">
-          <p className="text-xs uppercase tracking-[0.2em] text-[#C4A470] mb-4 font-medium">Vår Process</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-[#C4A470] mb-4 font-medium">Våra tjänster</p>
 
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
 
-            {/* Left Column: Content */}
+            {/* Left Content */}
             <div>
               <h2 className="text-4xl lg:text-5xl font-playfair text-white mb-12">
-                Mer än reaktiv hjälp
+                Rådgivning som täcker dina behov
               </h2>
 
               <div className="space-y-12">
-                {/* Item 01 */}
                 <div className="flex gap-6 group">
                   <div className="flex-shrink-0">
                     <div className="w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-[#C4A470] text-xs font-serif font-bold group-hover:bg-[#C4A470] group-hover:text-[#050A18] transition-all duration-300">
@@ -132,12 +125,11 @@ export default function KonsulttjansterPage() {
                   </div>
                   <div>
                     <p className="text-gray-400 font-light leading-relaxed">
-                      De flesta företag söker juridisk hjälp först när ett problem uppstått. Men de mest framgångsrika organisationerna arbetar proaktivt – de identifierar risker innan de blir verklighet och bygger strukturer som förebygger konflikter.
+                      Vår juridiska rådgivning spänner över ett brett spektrum av frågor. Vi anpassar alltid vår hjälp efter just din situation, oavsett om du är privatperson eller företagare.
                     </p>
                   </div>
                 </div>
 
-                {/* Item 02 */}
                 <div className="flex gap-6 group">
                   <div className="flex-shrink-0">
                     <div className="w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-[#C4A470] text-xs font-serif font-bold group-hover:bg-[#C4A470] group-hover:text-[#050A18] transition-all duration-300">
@@ -146,7 +138,7 @@ export default function KonsulttjansterPage() {
                   </div>
                   <div>
                     <p className="text-gray-400 font-light leading-relaxed">
-                      Med löpande juridisk konsultation får du en jurist som känner till er verksamhet, era avtal och era utmaningar. Det betyder att vi kan ge snabbare och mer träffsäkra svar.
+                      För privatpersoner hjälper vi ofta med frågor som rör familjerätt, arvsrätt, samboavtal, fastighetsaffärer och bostadsköp, samt granskning av avtal innan du skriver under.
                     </p>
                   </div>
                 </div>
@@ -154,15 +146,15 @@ export default function KonsulttjansterPage() {
 
               <div className="mt-20">
                 <h2 className="text-4xl lg:text-5xl font-playfair text-white mb-12">
-                  Skräddarsytt stöd för er vardag
+                  För företag och organisationer
                 </h2>
 
                 <div className="space-y-10">
                   {[
-                    "Vår konsultverksamhet anpassas helt efter era behov.",
-                    "Avtalsgranskning och avtalsförhandling är ofta centralt. Vi hjälper er att granska inkommande avtal, identifiera riskklausuler och föreslå ändringar.",
-                    "Affärsjuridisk rådgivning omfattar det mesta som rör er kommersiella verksamhet. Arbetsrättslig vägledning är viktigt för organisationer med anställda.",
-                    "Löpande bollplank är kanske det värdefullaste – möjligheten att lyfta luren och snabbt få svar på en fråga."
+                    "För företag och organisationer bistår vi med avtalsgranskning och avtalsförhandling, arbetsrättsliga frågor, bolagsrättsliga spörsmål samt genomgång av villkor och policyer.",
+                    "Genom att ta hjälp av en erfaren jurist tidigt i processen kan du undvika kostsamma misstag och fatta välgrundade beslut baserade på fakta snarare än antaganden.",
+                    "Det kan vara frestande att försöka lösa juridiska frågor på egen hand. Men juridik handlar sällan om generella svar – det handlar om just din specifika situation.",
+                    "När du kontaktar Adekvat Juridik börjar vi alltid med att lyssna. Detta första möte är kostnadsfritt och ger dig möjlighet att bedöma om vi är rätt match för ditt ärende."
                   ].map((text, idx) => (
                     <div key={idx} className="flex gap-6 group">
                       <div className="flex-shrink-0">
@@ -179,45 +171,43 @@ export default function KonsulttjansterPage() {
               </div>
             </div>
 
-            {/* Right Column: Image */}
+            {/* Right Image */}
             <div className="relative h-full min-h-[500px] lg:min-h-0">
               <div className="sticky top-12 w-full h-full lg:h-[80vh] min-h-[600px] relative">
                 <div className="absolute inset-4 border border-[#C4A470]/30 z-20 pointer-events-none"></div>
                 <img
-                  src="https://images.unsplash.com/photo-1502700807168-484a3e7889d0?w=1600&q=80"
-                  alt="Interior Architecture"
-                  className="w-full h-full object-cover shadow-2xl brightness-[0.8]"
+                  src="/assets/statue.jpg"
+                  alt="Interior Library"
+                  className="w-full h-full object-cover [transform:scaleX(-1)] shadow-2xl brightness-[0.8]"
                 />
               </div>
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* SECTION 3: Är konsultverksamhet rätt för er? */}
+      {/* SECTION 3: Process Steps */}
       <section className="relative w-full px-6 lg:px-12 py-20 lg:py-32">
         <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
-          {/* Left: Image */}
+          {/* Left Image */}
           <div className="relative order-2 lg:order-1">
             <div className="aspect-square w-full max-w-xl mx-auto relative">
               <img
-                src="https://images.unsplash.com/photo-1447023029226-ef8f6b52e3ea?w=1600&q=80"
-                alt="Bookshelf"
+                src="https://images.unsplash.com/photo-1654588834754-33346e3ee095?w=1600&q=80"
+                alt="Table and Books"
                 className="w-full h-full object-cover shadow-2xl relative z-10"
               />
-              {/* Decorative elements */}
               <div className="absolute -top-6 -left-6 w-32 h-32 border-t border-l border-[#C4A470]/50 z-20 hidden lg:block"></div>
             </div>
           </div>
 
-          {/* Right: Content */}
+          {/* Right Content */}
           <div className="order-1 lg:order-2">
             <div className="mb-16">
               <p className="text-xs uppercase tracking-[0.2em] text-[#C4A470] mb-4 font-medium">Vår Process</p>
               <h2 className="text-4xl lg:text-5xl font-playfair text-white mb-8">
-                Är konsulttjänster rätt för er?
+                Förebygg problem innan de uppstår
               </h2>
               <div className="flex gap-6">
                 <div className="flex-shrink-0 mt-1">
@@ -226,15 +216,15 @@ export default function KonsulttjansterPage() {
                   </div>
                 </div>
                 <p className="text-gray-400 font-light leading-relaxed max-w-lg">
-                  Vårt koncept passar särskilt bra för små och medelstora företag som regelbundet stöter på juridiska frågor men inte har tillräcklig volym för att motivera en heltidsanställd jurist.
+                  Det kan vara frestande att försöka lösa juridiska frågor på egen hand. Internet är fullt av information, men juridik handlar sällan om generella svar – det handlar om just din specifika situation.
                 </p>
               </div>
             </div>
 
             <div>
-              <p className="text-xs uppercase tracking-[0.2em] text-[#C4A470] mb-4 font-medium">Vår Process</p>
+              <p className="text-xs uppercase tracking-[0.2em] text-[#C4A470] mb-4 font-medium">Vårt arbetssätt</p>
               <h2 className="text-4xl lg:text-5xl font-playfair text-white mb-8">
-                Flexibelt samarbete på era villkor
+                Tydlighet från första kontakt
               </h2>
               <div className="flex gap-6">
                 <div className="flex-shrink-0 mt-1">
@@ -243,7 +233,7 @@ export default function KonsulttjansterPage() {
                   </div>
                 </div>
                 <p className="text-gray-400 font-light leading-relaxed max-w-lg">
-                  Vi tror på flexibilitet. Ni behöver inte binda er till en fast månadsavgift eller ett visst antal timmar – vi arbetar på det sätt som passar er bäst.
+                  Genom att ta hjälp av en erfaren jurist tidigt i processen kan du undvika kostsamma misstag, fatta välgrundade beslut baserade på fakta, och spara både tid och pengar på lång sikt.
                 </p>
               </div>
             </div>
