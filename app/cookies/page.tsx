@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Cookiepolicy | Adekvat Juridik",
   description: "Information om hur Adekvat Juridik använder cookies på vår webbplats. Läs om olika typer av cookies och hur du kan hantera dina cookie-inställningar.",
   robots: {
-    index: false,
+    index: true,
     follow: true,
   },
   alternates: {

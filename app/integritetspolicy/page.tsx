@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Integritetspolicy | Adekvat Juridik",
   description: "Läs om hur Adekvat Juridik behandlar dina personuppgifter enligt GDPR. Information om dataskydd, användarrättigheter och våra rutiner för integritet.",
   robots: {
-    index: false,
+    index: true,
     follow: true,
   },
   alternates: {
