@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedArticles from '@/components/RelatedArticles';
 import AnimatedCTAButton from '@/components/AnimatedCTAButton';
+import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
   title: 'Tvistlösning & Juridisk Representation',
@@ -23,36 +24,42 @@ export default function TvisterPage() {
     { label: 'Tvister', href: '/rattsomraden/tvister' },
   ];
 
+  // FAQ data for the page
+  const faqs = [
+    {
+      question: 'När är det läge att eskalera en konflikt och ta in jurist – vad är varningssignalerna?',
+      answer: 'Varningssignaler är till exempel uteblivna betalningar, avtalsbrott, hot om rättsliga åtgärder eller när kommunikationen med motparten låser sig. Ju tidigare en jurist kopplas in, desto större är chansen att lösa tvisten effektivt.'
+    },
+    {
+      question: 'Hur ser er strategi ut i början av en tvist och vad behöver ni från klienten?',
+      answer: 'Vi börjar med att utreda fakta, granska avtal och bevisning samt bedöma styrkor och risker. Därefter tar vi fram en strategi, ofta med ett kravbrev som första steg. För detta behöver vi relevant dokumentation och en tydlig bild av vad klienten vill uppnå.'
+    },
+    {
+      question: 'Vad är en realistisk tidslinje för en tvist – från första kravbrev till eventuell dom?',
+      answer: 'En enklare tvist kan lösas på några veckor eller månader. Om ärendet går till domstol kan processen ta från cirka 6 månader upp till ett par år, beroende på ärendets komplexitet.'
+    },
+    {
+      question: 'Hur arbetar ni för att lösa tvisten kostnadseffektivt?',
+      answer: 'Vi utvärderar löpande om förlikning eller medling är ett bättre alternativ än domstol. Beslut fattas i samråd med klienten, med fokus på affärsnytta, risk och kostnad.'
+    },
+    {
+      question: 'Hur fungerar rättsskydd – vilka försäkringar kan täcka kostnader?',
+      answer: 'Rättsskydd ingår ofta i företags- eller hemförsäkringar och kan täcka en stor del av juridiska kostnader. Vi hjälper klienten att kontrollera om rättsskydd finns och att ansöka om det hos försäkringsbolaget.'
+    }
+  ];
+
   // FAQ Schema for rich snippets
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: 'Vad kostar det att anlita en jurist vid en tvist?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Kostnaden varierar beroende på tvistens komplexitet. Vi erbjuder en kostnadsfri första konsultation där vi bedömer ärendet och ger en uppskattning. Många har även rättsskydd via sin hemförsäkring som täcker delar av kostnaderna.'
-        }
-      },
-      {
-        '@type': 'Question',
-        name: 'Hur lång tid tar en tvisteprocess?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Tidsramen varierar kraftigt. En enklare förhandling kan lösas på några veckor, medan en domstolsprocess kan ta 1-2 år. Vi arbetar alltid för att nå en lösning så effektivt som möjligt.'
-        }
-      },
-      {
-        '@type': 'Question',
-        name: 'Kan jag använda mitt rättsskydd?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Ja, de flesta hemförsäkringar inkluderar rättsskydd som täcker en stor del av advokatkostnaderna vid tvister. Vi hjälper dig att ansöka om rättsskydd hos ditt försäkringsbolag.'
-        }
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer
       }
-    ]
+    }))
   };
 
   // Breadcrumb Schema
@@ -153,6 +160,8 @@ export default function TvisterPage() {
           </div>
         </section>
 
+        {/* Gradient Transition */}
+        <div className="h-32 lg:h-48 bg-gradient-to-b from-[#050A18] to-[#0B1121]"></div>
 
         {/* SECTION 2: Process */}
         <section className="relative w-full px-6 lg:px-12 py-20 lg:py-32 bg-[#0B1121]">
@@ -225,7 +234,7 @@ export default function TvisterPage() {
         </section>
 
         {/* SECTION 3: Process Steps */}
-        <section className="relative w-full px-6 lg:px-12 py-20 lg:py-32">
+        <section className="relative w-full px-6 lg:px-12 py-20 lg:py-32 bg-[#0B1121]">
           <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
             {/* Left Image */}
@@ -278,6 +287,13 @@ export default function TvisterPage() {
             </div>
           </div>
         </section>
+
+        {/* FAQ Section */}
+        <FAQSection
+          faqs={faqs}
+          title="Vanliga frågor om tvistlösning"
+          subtitle="Här hittar du svar på de vanligaste frågorna om kommersiella tvister och fordringstvister."
+        />
 
         {/* Related Articles Section */}
         <RelatedArticles category="Tvister" />

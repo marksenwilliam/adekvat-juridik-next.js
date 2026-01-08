@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import RelatedArticles from '@/components/RelatedArticles';
 import AnimatedCTAButton from '@/components/AnimatedCTAButton';
+import FAQSection from '@/components/FAQSection';
 
 export const metadata: Metadata = {
   title: 'Företagsöverlåtelser - Köp & Sälj Företag',
@@ -23,36 +24,42 @@ export default function ForetagsoverlatelserPage() {
     { label: 'Företagsöverlåtelser', href: '/rattsomraden/foretagsoverlatelser' },
   ];
 
+  // FAQ data for the page
+  const faqs = [
+    {
+      question: 'Vilka är de vanligaste fallgroparna när man köper/säljer företag?',
+      answer: 'Vanliga fallgropar är bristfällig due diligence, otydliga avtal och underskattade risker kring ansvar, skatt eller personal. Tidig juridisk rådgivning minskar dessa risker.'
+    },
+    {
+      question: 'Hur ser processen ut steg för steg och hur lång tid tar det?',
+      answer: 'Processen omfattar normalt NDA, LOI, due diligence, förhandling av avtal och tillträde. Tidsåtgången varierar, men ligger ofta mellan 2–6 månader.'
+    },
+    {
+      question: 'Vad ingår i due diligence hos er?',
+      answer: 'Vi granskar bland annat avtal, bolagsstruktur, personalfrågor, immateriella rättigheter, pågående tvister, regelefterlevnad och skatter.'
+    },
+    {
+      question: 'Aktieköp vs inkråmsaffär – hur hjälper ni oss välja rätt struktur?',
+      answer: 'Vi analyserar juridiska och skattemässiga konsekvenser samt riskfördelning för både köpare och säljare, och rekommenderar den struktur som bäst passar affären.'
+    },
+    {
+      question: 'Vilka garantier/villkor är viktigast i ett överlåtelseavtal?',
+      answer: 'Viktiga delar är garantier om bolagets ekonomi, avtal, skatter och tvister samt regler om ansvar och ersättning. Vad som är "rimligt" beror på bolagets storlek, riskbild och parternas förhandlingsstyrka.'
+    }
+  ];
+
   // FAQ Schema for rich snippets
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: 'Vad är skillnaden mellan aktieförvärv och inkråmsförvärv?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Vid aktieförvärv köper du hela bolaget med tillgångar, skulder och historik. Vid inkråmsförvärv köper du endast utvalda tillgångar som inventarier, kundavtal och varumärke. Valet påverkar skatt, ansvar och avtalsöverföring.'
-        }
-      },
-      {
-        '@type': 'Question',
-        name: 'Vad ingår i en due diligence?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Due diligence omfattar finansiell, juridisk och skattemässig granskning av företaget. Vi går igenom avtal, anställningsförhållanden, immateriella rättigheter, pågående tvister och skattesituationen för att identifiera risker.'
-        }
-      },
-      {
-        '@type': 'Question',
-        name: 'Hur lång tid tar en företagsöverlåtelse?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Processen tar vanligtvis 2-6 månader beroende på företagets storlek och komplexitet. Fasen inkluderar sekretessavtal, letter of intent, due diligence, avtalsförhandling och tillträde.'
-        }
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer
       }
-    ]
+    }))
   };
 
   // Breadcrumb Schema
@@ -154,6 +161,8 @@ export default function ForetagsoverlatelserPage() {
           </div>
         </section>
 
+        {/* Gradient Transition */}
+        <div className="h-32 lg:h-48 bg-gradient-to-b from-[#050A18] to-[#0B1121]"></div>
 
         {/* SECTION 2: Process */}
         <section className="relative w-full px-6 lg:px-12 py-20 lg:py-32 bg-[#0B1121]">
@@ -239,7 +248,7 @@ export default function ForetagsoverlatelserPage() {
         </section>
 
         {/* SECTION 3: Process Steps */}
-        <section className="relative w-full px-6 lg:px-12 py-20 lg:py-32">
+        <section className="relative w-full px-6 lg:px-12 py-20 lg:py-32 bg-[#0B1121]">
           <div className="max-w-[1400px] mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
 
             {/* Left Image */}
@@ -292,6 +301,13 @@ export default function ForetagsoverlatelserPage() {
             </div>
           </div>
         </section>
+
+        {/* FAQ Section */}
+        <FAQSection
+          faqs={faqs}
+          title="Vanliga frågor om företagsöverlåtelser"
+          subtitle="Här hittar du svar på de vanligaste frågorna om köp och försäljning av företag."
+        />
 
         {/* Related Articles Section */}
         <RelatedArticles category="Företagsöverlåtelser" />
